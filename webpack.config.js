@@ -4,7 +4,8 @@ import webpack from 'webpack'
 module.exports = {
   entry: ['webpack-hot-middleware/client',
       'react-hot-loader/patch',
-      './client/index.js'],
+      path.join(__dirname, './client/index.js')
+        ],
   output: {
     path: '/',
     publicPath: '/',
@@ -24,15 +25,26 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpg|gif)$/,
+          test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
             loader: 'url-loader',
             options: {
+                name: '[path][name].[ext]',
               limit: 5000
             }
           }
         ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+          }
+        }]
       },
       {
         test: /\.js$/,
