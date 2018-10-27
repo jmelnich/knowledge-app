@@ -3,16 +3,19 @@
 body {
   background-color: white;
   font-family: $OpenSans-Regular;
+  color: $dark-bg;
 }
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .flex-row, .flex-row-between {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
@@ -20,6 +23,35 @@ body {
   justify-content: space-between;
 }
 
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 a {
   text-decoration: none;
+}
+
+button {
+  color: white;
+  background-color: $lighter-accent;
+  border: 1px solid $lighter-accent;
+  transition: 0.3s;
+  &:hover {
+    background-color: $accent;
+    border: 1px solid $accent;
+  }
+  margin: 1em;
+  border-radius: 0.4em;
+  padding: 12px;
+  width: 200px;
+  font-size: 1.1em;
+  font-family: $FiraSans-Medium;
+  text-transform: uppercase;
+  cursor: pointer;
+
 }

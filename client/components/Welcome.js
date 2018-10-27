@@ -4,25 +4,9 @@ const Welcome = (props) => {
     return (
         <div className="welcome">
             <div className="wrapper">
-                <div className="info">
-                    <h1>Database of your knowledge</h1>
-                </div>
-                <div className="steps-block">
-                    <h2>Record and keep track of your progress</h2>
-                    <div className="flex-row">
-                        <div className="step">
-                            <p>Define your area of expertize</p>
-                        </div>
-                        <div className="step">
-                            <p>Complete course</p>
-                        </div>
-                        <div className="step">
-                            <p>Update your skills</p>
-                        </div>
-                        <div className="step">
-                            <p>Share your profile</p>
-                        </div>
-                    </div>
+                <div className="info flex-col">
+                    <h1>All knowledge in one place</h1>
+                    <p>Find, learn and keep records of all your skills </p>
                 </div>
             </div>
         </div>

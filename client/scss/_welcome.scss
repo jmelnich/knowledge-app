@@ -1,55 +1,26 @@
 @import "variables";
 
-header {
-  background-color: $dark-bg;
-  height: 60px;
-  font-family: $OpenSans-Light;
-  color: white;
-  text-transform: uppercase;
-  .logo {
-    margin-top: -35px;
+.welcome {
+  height: 500px;
+  background: linear-gradient(to right, rgba(255,255,255,1) 1%,
+          rgba(255,255,255,1) 10%,
+          rgba(255,255,255,1) 20%,
+          rgba(255,255,255,0) 100%),
+  url("../img/welcome-bg.jpeg");
+  background-size: cover;
+}
+
+.info {
+  margin-left: 5em;
+  text-shadow: 2px 2px 4px white;
+  color: $dark-bg;
+  h1 {
+    font-family: $OpenSans-Bold;
+    font-size: 3em;
+    line-height: 150%;
   }
-  .naming {
-    text-align: center;
-    padding: 10px 15px;
-    span {
-      font-family: $FiraSans-Light;
-      &:last-of-type {
-        color: $accent;
-        font-family: $FiraSans-Medium;
-      }
-    }
-    p {
-      font-size: 0.7em;
-    }
-  }
-  nav {
-    li {
-      font-size: 0.8em;
-      &:not(:first-child) {
-        &:before {
-          content: "|";
-        }
-      }
-      a {
-        padding: 10px 15px;
-        color: white;
-        &:hover {
-          color: $accent;
-        }
-      }
-      &:first-child {
-        &:after {
-          content: "\25bc";
-          font-size: 0.8em;
-          margin: 0 10px 0 -11px;
-        }
-        &:hover{
-          &:after {
-            color: $accent;
-          }
-        }
-      }
-    }
+  p {
+    font-size: 1.5em;
+    line-height: 150%;
   }
 }
