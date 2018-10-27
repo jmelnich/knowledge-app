@@ -8,9 +8,7 @@ const Welcome = (props) => {
                     <h1>Database of your knowledge</h1>
                 </div>
                 <div className="steps-block">
-                    <header>
-                        <h2>Record and keep track of your progress</h2>
-                    </header>
+                    <h2>Record and keep track of your progress</h2>
                     <div className="flex-row">
                         <div className="step">
                             <p>Define your area of expertize</p>

@@ -1,0 +1,55 @@
+@import "variables";
+
+header {
+  background-color: $dark-bg;
+  height: 60px;
+  font-family: $OpenSans-Light;
+  color: white;
+  text-transform: uppercase;
+  .logo {
+    margin-top: -35px;
+  }
+  .naming {
+    text-align: center;
+    padding: 10px 15px;
+    span {
+      font-family: $FiraSans-Light;
+      &:last-of-type {
+        color: $accent;
+        font-family: $FiraSans-Medium;
+      }
+    }
+    p {
+      font-size: 0.7em;
+    }
+  }
+  nav {
+    li {
+      font-size: 0.8em;
+      &:not(:first-child) {
+        &:before {
+          content: "|";
+        }
+      }
+      a {
+        padding: 10px 15px;
+        color: white;
+        &:hover {
+          color: $accent;
+        }
+      }
+      &:first-child {
+        &:after {
+          content: "\25bc";
+          font-size: 0.8em;
+          margin: 0 10px 0 -11px;
+        }
+        &:hover{
+          &:after {
+            color: $accent;
+          }
+        }
+      }
+    }
+  }
+}
