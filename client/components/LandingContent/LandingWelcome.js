@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Welcome = (props) => {
+const LandingWelcome = () => {
     return (
         <div className="welcome">
             <div className="wrapper">
@@ -11,6 +11,6 @@ const Welcome = (props) => {
             </div>
         </div>
     );
-};
+}
 
-export default Welcome;
+export default LandingWelcome;

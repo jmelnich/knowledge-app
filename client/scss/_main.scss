@@ -1,11 +1,11 @@
 @import "variables";
 
 .section-content {
-  margin: 3em auto;
+  padding: 3em 0;
   h2 {
     text-align: center;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 2.2em;
     line-height: 150%;
     margin-bottom: 0.5em;
   }
@@ -97,5 +97,40 @@
     text-shadow: 2px 2px 4px white;
   }
 }
+
+#partner-sources {
+  .partners {
+    max-width: 70%;
+    margin: 3em auto 0;
+  }
+}
+
+#contacts {
+  background-image: linear-gradient(-120deg, #25fb9f 0%, #339966 100%);
+  background-position: 0 0;
+  background-size: 300%;
+  h2 {
+    color: white;
+  }
+  #map {
+    width: 55%;
+    height: 467px;
+    border: 5px solid white;
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
+
+  }
+  .contact-form {
+    background: white;
+    box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 0.4em;
+    textarea {
+      min-height: 140px;
+    }
+  }
+}
+
 
 
