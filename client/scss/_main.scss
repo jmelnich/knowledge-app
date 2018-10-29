@@ -29,7 +29,7 @@
 
 .steps-block {
   .step {
-    height: 150px;
+    height: 200px;
     width: 200px;
     margin: 1.4em;
     color: white;
@@ -99,6 +99,10 @@
 }
 
 #partner-sources {
+  h2 {
+    max-width: 70%;
+    margin: 0 auto;
+  }
   .partners {
     max-width: 70%;
     margin: 3em auto 0;
@@ -116,7 +120,6 @@
     width: 55%;
     height: 467px;
     border: 5px solid white;
-    box-sizing: border-box;
     border-radius: 0.4em;
     box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
 
@@ -124,13 +127,46 @@
   .contact-form {
     background: white;
     box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 25px;
     border-radius: 0.4em;
+    height: 467px;
     textarea {
       min-height: 140px;
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .section-content {
+    h2 {
+      font-size: 2.1em;
+      line-height: 140%;
+      margin-bottom: 0.4em;
+    }
+    h3 {
+      line-height: 140%;
+      font-size: 1.1em;
+      padding-bottom: 4px;
+    }
+    p {
+      line-height: 120%;
+      font-size: 0.9em;
+    }
+  }
+  #about {
+    ul {
+      max-width: 75%;
+      li p{
+        font-size: 1.1em;
+      }
+    }
+  }
+  #contacts .contact-form {
+    margin-top: 3em;
+    padding: 25px 60px;
+  }
+}
+
 
 
 

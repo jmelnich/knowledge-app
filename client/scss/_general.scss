@@ -6,6 +6,10 @@ body {
   color: $dark-bg;
 }
 
+div {
+  box-sizing: border-box;
+}
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,6 +34,39 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+/* wrap on 992px */
+@media screen and (max-width: 992px) {
+  .flex-wrap-m {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+/* wrap on 768px */
+@media screen and (max-width: 768px) {
+  .flex-wrap-s {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+/* wrap on 320px */
+@media screen and (max-width: 320px) {
+  .flex-wrap-xs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 a {
@@ -75,13 +112,18 @@ form input, textarea {
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #C7CED4;
+  font-family: $OpenSans-Regular;
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: #C7CED4;
+  font-family: $OpenSans-Regular;
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: #C7CED4;
+  font-family: $OpenSans-Regular;
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #C7CED4;
+  font-family: $OpenSans-Regular;
 }
+

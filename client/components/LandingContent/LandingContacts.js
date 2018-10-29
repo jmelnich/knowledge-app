@@ -8,7 +8,7 @@ const LandingContacts = () => {
             <div className="wrapper">
                 <div className="section-content">
                     <h2>Our contacts</h2>
-                    <div className="flex-row-between">
+                    <div className="flex-row-between flex-wrap-m">
                         <LandingContactsMap/>
                         <LandingContactsForm/>
                     </div>
