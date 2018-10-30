@@ -2,25 +2,6 @@
 
 .section-content {
   padding: 3em 0;
-  h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 2.2em;
-    line-height: 150%;
-    margin-bottom: 0.5em;
-  }
-  h3 {
-    text-align: center;
-    line-height: 150%;
-    font-size: 1.2em;
-    font-family: $OpenSans-Light;
-    padding-bottom: 5px;
-    margin-bottom: 0.5em;
-  }
-  p {
-    line-height: 130%;
-    font-family: $FiraSans-Light;
-  }
 }
 
 #steps {
@@ -82,8 +63,6 @@
       }
       p {
         margin-left: 1em;
-        font-family: $FiraSans-Light;
-        font-size: 1.2em;
       }
     }
   }
@@ -101,7 +80,7 @@
 #partner-sources {
   h2 {
     max-width: 70%;
-    margin: 0 auto;
+    margin: 0 auto 1em;
   }
   .partners {
     max-width: 70%;
@@ -137,33 +116,62 @@
 }
 
 @media screen and (max-width: 992px) {
-  .section-content {
-    h2 {
-      font-size: 2.1em;
-      line-height: 140%;
-      margin-bottom: 0.4em;
+  #about {
+    ul {
+      max-width: 75%;
+    }
+  }
+  #contacts {
+    .contact-form {
+      margin-top: 3em;
+      width: 100%;
+    }
+    #map {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .steps-block {
+    .step {
+      height: 150px;
+      width: 50%;
+      margin: 1.4em;
+      padding: 20px;
     }
     h3 {
-      line-height: 140%;
-      font-size: 1.1em;
-      padding-bottom: 4px;
+      font-size: 1.3em;
     }
-    p {
-      line-height: 120%;
-      font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .steps-block {
+    .step {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .steps-block {
+    .step {
+      width: 90%;
     }
   }
   #about {
     ul {
-      max-width: 75%;
-      li p{
-        font-size: 1.1em;
+      max-width: 90%;
+      li {
+        i {
+          display: none;
+        }
+        p {
+          margin-left: 0.5em;
+        }
       }
     }
-  }
-  #contacts .contact-form {
-    margin-top: 3em;
-    padding: 25px 60px;
   }
 }
 

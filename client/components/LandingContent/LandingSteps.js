@@ -6,7 +6,7 @@ const LandingSteps = () => {
             <div className="wrapper">
                 <div className="section-content">
                     <h2>Record and keep track of your progress</h2>
-                    <div className="flex-row steps-block">
+                    <div className="flex-row steps-block flex-wrap-s">
                         <div className="step">
                             <h3>Define expertize</h3>
                             <p>Find the most relevant course among the diversity of e-learning platforms
