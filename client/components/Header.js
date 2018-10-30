@@ -16,7 +16,9 @@ const Header = (props) => {
                     <span>Data</span><span>base</span>
                 </div>
              </div>
-             <nav>
+             <label for="menu" className="toggle-menu">☰ Menu</label>
+             <input type="checkbox" name="toggle" id="menu" className="toggle-menu"/>
+             <nav id="nav">
                  <ul className="flex-row">
                      <li><a href="#">catalog</a></li>
                      <li><a href="#">about us</a></li>

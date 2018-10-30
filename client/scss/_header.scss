@@ -6,6 +6,7 @@ header {
   font-family: $OpenSans-Light;
   color: white;
   text-transform: uppercase;
+  position: relative;
   .logo {
     margin-top: -35px;
   }
@@ -23,37 +24,100 @@ header {
       font-size: 0.7em;
     }
   }
-  nav {
-    li {
-      font-size: 0.8em;
-      &:not(:first-child) {
-        &:before {
-          content: "|";
-        }
+}
+
+nav {
+  li {
+    font-size: 0.8em;
+    &:not(:first-child) {
+      &:before {
+        content: "|";
       }
-      a {
-        padding: 10px 15px;
-        color: white;
+    }
+    a {
+      padding: 10px 15px;
+      color: white;
+      transition: 0.3s;
+      &:hover {
+        color: $accent;
+      }
+    }
+    &:first-child {
+      &:after {
+        content: "\25bc";
+        font-size: 0.8em;
+        margin: 0 10px 0 -11px;
         transition: 0.3s;
-        &:hover {
-          color: $accent;
-        }
       }
-      &:first-child {
+      &:hover{
         &:after {
-          content: "\25bc";
-          font-size: 0.8em;
-          margin: 0 10px 0 -11px;
-          transition: 0.3s;
-        }
-        &:hover{
-          &:after {
-            color: $accent;
-          }
+          color: $accent;
         }
       }
     }
   }
 }
 
-//768px burger
+@media screen and (max-width: 768px) {
+  /* hide nav, show burger */
+  #nav {
+    display: none;
+  }
+  /*show nav */
+  #menu:checked ~ #nav {
+      display: block;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: 100%;
+    height: 60px;
+    background-color: $accent;
+    color: white;
+    ul {
+      width: 100%;
+      li {
+        width: 100%;
+        a {
+          padding: 10px 20px;
+          &:hover {
+            color:$dark-bg;
+          }
+        }
+        &:first-child {
+          &:hover{
+            &:after {
+              color: $dark-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px){
+  #menu:checked ~ #nav {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: 100%;
+    height: 60px;
+    background-color: $accent;
+    color: white;
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      li {
+        width: 100%;
+
+        &:not(:first-child) {
+          &:before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}
