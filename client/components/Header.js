@@ -17,12 +17,12 @@ const Header = (props) => {
                 </div>
              </div>
              <label for="menu" className="toggle-menu">☰ Menu</label>
-             <input type="checkbox" name="toggle" id="menu" className="toggle-menu"/>
+             <input type="checkbox" name="toggle" id="menu"/>
              <nav id="nav">
                  <ul className="flex-row">
                      <li><a href="#">catalog</a></li>
-                     <li><a href="#">about us</a></li>
-                     <li><a href="#">contacts</a></li>
+                     <li><a href="#about">about us</a></li>
+                     <li><a href="#contacts">contacts</a></li>
                      <li><a href="#">log in</a></li>
                  </ul>
              </nav>

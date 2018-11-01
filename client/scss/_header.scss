@@ -26,6 +26,12 @@ header {
   }
 }
 
+
+
+#menu, .toggle-menu {
+  display: none;
+}
+
 nav {
   li {
     font-size: 0.8em;
@@ -63,22 +69,27 @@ nav {
   #nav {
     display: none;
   }
+  .toggle-menu {
+    display: block;
+  }
   /*show nav */
   #menu:checked ~ #nav {
       display: block;
     position: absolute;
     left: 0;
-    bottom: -60px;
+    top: 60px;
     width: 100%;
     height: 60px;
-    background-color: $accent;
+    background-color: rgba(51,153,102, 0.7);
+
     color: white;
     ul {
       width: 100%;
       li {
         width: 100%;
+        font-family: $OpenSans-Regular;
         a {
-          padding: 10px 20px;
+          padding: 10px 25px;
           &:hover {
             color:$dark-bg;
           }
@@ -101,20 +112,32 @@ nav {
     left: 0;
     bottom: -60px;
     width: 100%;
-    height: 60px;
-    background-color: $accent;
+    background-color: rgba(51,153,102, 0.7);
     color: white;
+    height: 150px;
     ul {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: auto;
       li {
         width: 100%;
-
+        display: flex;
+        justify-content: center;
+        a {
+          padding: 12px 25px;
+        }
         &:not(:first-child) {
           &:before {
             content: "";
+          }
+        }
+        &:first-child {
+          &:after {
+            font-size: 0.8em;
+            margin: 12px 12px 0 -20px;
+            transition: 0.3s;
           }
         }
       }
