@@ -1,4 +1,5 @@
 import React from 'react'
+import LoginForm from './Forms/LoginForm'
 
 const Header = (props) => {
  return (
@@ -23,10 +24,11 @@ const Header = (props) => {
                      <li><a href="#">catalog</a></li>
                      <li><a href="#about">about us</a></li>
                      <li><a href="#contacts">contacts</a></li>
-                     <li><a href="#">log in</a></li>
+                     <li><a href="#loginForm">log in</a></li>
                  </ul>
              </nav>
          </div>
+         <LoginForm/>
      </header>
  )
 };

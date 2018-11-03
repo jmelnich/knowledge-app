@@ -1,0 +1,109 @@
+@import "variables";
+
+.modal__login__content__fb, .modal__login__content__gp{
+  margin: 20px 5px;
+  padding: 8px 0 38px;
+  min-width: 48px;
+  width: 176px;
+  height: 38px;
+  color: white;
+  font-size: 12px;
+}
+
+.modal__login__content__button, .modal__signup__content__button{
+  margin: 20px 5px;
+  padding: 16px 0 34px;
+  min-width: 48px;
+  width: 100%;
+  height: 40px;
+  background: $accent;
+  border: 1px solid $accent;
+  color: white;
+  font-size: 14px;
+  &:hover{
+    background-color: darkred;
+    border: 1px solid darkblue;
+    transition: 0.2s ease;
+  }
+}
+
+.fa-facebook, .fa-google-plus{
+  padding-right: 7px;
+}
+
+#logIn, #signUp, #restorePassword{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 5;
+  transition:0.25s ease-in opacity;
+  &:target{
+    display: block;
+  }
+}
+
+#signUp{
+  overflow-y: auto;
+}
+
+
+.modal__login, .modal__signup, .modal__rpass{
+  width: 450px;
+  font-family: $OpenSans-Regular;
+  position: relative;
+  margin: 10% auto;
+  padding: 10px;
+  background: #fff;
+  .modal__login__content, .modal__signup__content, .modal__rpass__content{
+    position: relative;
+    margin: 0 auto;
+    padding: 25px 35px;
+    border: 1px solid $lighter-bg;
+    //h2{
+    //  font-family: $OpenSans-Bold;
+    //  font-size: 24px;
+    //  text-align: center;
+    //  text-transform: uppercase;
+    //}
+
+    .modal__login__content__or{
+      font-size: 12px;
+      position: absolute;
+      top: 137px;
+      padding: 0 10px;
+      right: 45%;
+      background: white;
+    }
+    .modal__login__content__form label, .modal__signup__content__form label{
+      margin: 5px 0;
+      display:inline-block;
+      font-size: 14px;
+    }
+    a{
+      font-size: 14px;
+      //color: $text-hover;
+      text-decoration: underline;
+    }
+    p{
+      text-align: center;
+    }
+  }
+
+}
+.modal__close{
+  z-index: 11;
+  line-height: 25px;
+  position: absolute;
+  right: 12px;
+  text-align: center;
+  top: 12px;
+  width: 24px;
+  &:hover{
+    //color: $text-hover;
+    cursor: pointer;
+  }
+}

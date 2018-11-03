@@ -25,7 +25,7 @@ class LandingContactsForm extends Component {
 
     validateEmail(e) {
         var email = e.target.value;
-        var regExpEmail = /^[a-zA-Z0-9._%+-]+\@[a-z0-9.-]+$/;
+        var regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
         if (regExpEmail.test(email)) {
             this.setState({
                 isValidEmail: true
