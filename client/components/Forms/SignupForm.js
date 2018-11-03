@@ -122,12 +122,14 @@ class SignupForm extends Component {
                             <input type="password"
                                    name="password1"
                                    onChange={this.handleChange}
+                                   autoComplete="off"
                                    onKeyUp={this.validateComplex}/>
                             {!this.state.isComplexPassword && !!this.state.password1.trim() &&
                             (<span className="error">Password is too weak</span>)}
                             <label>Repeat password</label>
                             <input type="password"
                                    name="password2"
+                                   autoComplete="off"
                                    onChange={this.handleChange}
                                    onKeyUp={this.validateMatch}/>
                             {!this.state.isPasswordMatch && !!this.state.password2.trim() &&

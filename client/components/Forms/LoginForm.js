@@ -85,6 +85,7 @@ class LoginForm extends Component {
                             <label>Password</label>
                             <input type="password"
                                     name="password"
+                                   autoComplete="on"
                                    onChange={this.handleChange}
                                    onKeyUp={this.validateComplex}/>
                             {!this.state.isComplexPassword && !!this.state.password.trim() &&

@@ -5,9 +5,19 @@
   background: linear-gradient(to right, rgba(255,255,255,1) 1%,
           rgba(255,255,255,1) 10%,
           rgba(255,255,255,1) 20%,
-          rgba(255,255,255,0) 100%),
-  url("../img/welcome-bg.jpeg");
+          rgba(255,255,255,0) 100%);
   background-size: cover;
+  img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    max-height: 500px;
+  }
+}
+
+.animate-left {
+  position: relative;
+  animation: animateleft 0.4s;
 }
 
 .info {
