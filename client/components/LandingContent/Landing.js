@@ -5,10 +5,16 @@ import LandingAbout from './LandingAbout'
 import LandingBegin from './LandingBegin'
 import LandingPartners from './LandingPartners'
 import LandingContacts from './LandingContacts'
+import LoginForm from '../Forms/LoginForm'
+import SignupForm from "../Forms/SignupForm";
+import RestorePasswordForm from "../Forms/RestorePasswordForm"
 
 const Landing = () => {
     return (
         <div>
+            <LoginForm/>
+            <SignupForm/>
+            <RestorePasswordForm/>
             <LandingWelcome/>
             <main>
                 <LandingSteps/>

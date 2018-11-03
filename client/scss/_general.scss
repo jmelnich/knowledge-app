@@ -27,6 +27,20 @@ h3 {
   padding-bottom: 5px;
   margin-bottom: 0.5em;
 }
+
+fieldset {
+  width: 100%;
+  legend {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    line-height: 140%;
+    margin-bottom: 0.5em;
+  }
+}
+
+
+
 p {
   line-height: 130%;
   font-family: $FiraSans-Light;
@@ -162,7 +176,16 @@ button[disabled] {
   background-color: #dbe2e8;
 }
 
-form input, textarea {
+form {
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+  margin: 1em 0 0.5em;
+}
+
+input, textarea {
   display: block;
   width: 100%;
   height: 40px;
@@ -171,6 +194,11 @@ form input, textarea {
   font-size: 0.9em;
   padding: 3px 0 0 10px;
   box-sizing: border-box;
+}
+
+.error {
+  color: #f5222d;
+  font-size: 0.8em;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

@@ -1,5 +1,4 @@
 import React from 'react'
-import LoginForm from './Forms/LoginForm'
 
 const Header = (props) => {
  return (
@@ -17,7 +16,7 @@ const Header = (props) => {
                     <span>Data</span><span>base</span>
                 </div>
              </div>
-             <label for="menu" className="toggle-menu">☰ Menu</label>
+             <label htmlFor="menu" className="toggle-menu">☰ Menu</label>
              <input type="checkbox" name="toggle" id="menu"/>
              <nav id="nav">
                  <ul className="flex-row">
@@ -28,7 +27,6 @@ const Header = (props) => {
                  </ul>
              </nav>
          </div>
-         <LoginForm/>
      </header>
  )
 };

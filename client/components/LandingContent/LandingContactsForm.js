@@ -24,8 +24,8 @@ class LandingContactsForm extends Component {
     };
 
     validateEmail(e) {
-        var email = e.target.value;
-        var regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
+        const email = e.target.value;
+        const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
         if (regExpEmail.test(email)) {
             this.setState({
                 isValidEmail: true
@@ -53,7 +53,7 @@ class LandingContactsForm extends Component {
 
     handleSubmit() {
         alert('Your message has been sent! We will contact you back within 7 days');
-        //TODO: send message
+        //TODO: send message from user to admin email
         this.setState({
             email: '',
             name: '',
@@ -64,14 +64,12 @@ class LandingContactsForm extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="contact-form">
                 <form>
-                    <h3>Contact us</h3>
                     <fieldset className="flex-col">
+                        <legend>Contact us</legend>
                         <input type="email"
-                               size="30"
                                name="email"
                                placeholder="email@gmail.com"
                                value={this.state.email}
