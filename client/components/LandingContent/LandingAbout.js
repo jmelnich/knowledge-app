@@ -4,7 +4,6 @@ const LandingAbout = () => {
     return (
         <section id="about">
             <div className="wrapper flex-row-between">
-
                 <div className="section-content">
                     <h2>About us</h2>
                     <ul>

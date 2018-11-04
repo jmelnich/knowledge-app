@@ -3,32 +3,32 @@ import booksImg from "../../img/books.jpeg"
 import librImg from "../../img/welcome-bg.jpeg"
 
 class LandingWelcome extends Component {
-    constructor() {
-        super();
-        this.indx = 0;
-        this.imagesElems = document.getElementsByClassName("sliderImg");
-        console.log('in constructor', this.imagesElems);
-        this.carousel = this.carousel.bind(this);
-    }
-    componentDidMount() {
-        this.carousel();
-    };
-
-
-    carousel() {
-        console.log('in carousel', this.imagesElems);
-        for (let i = 0; i < this.imagesElems.length; i++) {
-            this.imagesElems[i].style.display = "none";
-        }
-        this.indx++;
-        if (this.indx > this.imagesElems.length) {
-            this.indx = 1;
-        }
-        this.imagesElems[this.indx - 1].style.display = "block";
-        setTimeout(this.carousel, 5500);
-
-
-    }
+    // constructor() {
+    //     super();
+    //     this.indx = 0;
+    //     this.imagesElems = document.getElementsByClassName("sliderImg");
+    //     console.log('in constructor', this.imagesElems);
+    //     this.carousel = this.carousel.bind(this);
+    // }
+    // componentDidMount() {
+    //     this.carousel();
+    // };
+    //
+    //
+    // carousel() {
+    //     console.log('in carousel', this.imagesElems);
+    //     for (let i = 0; i < this.imagesElems.length; i++) {
+    //         this.imagesElems[i].style.display = "none";
+    //     }
+    //     this.indx++;
+    //     if (this.indx > this.imagesElems.length) {
+    //         this.indx = 1;
+    //     }
+    //     this.imagesElems[this.indx - 1].style.display = "block";
+    //     setTimeout(this.carousel, 5500);
+    //
+    //
+    // }
 
     render() {
         return (

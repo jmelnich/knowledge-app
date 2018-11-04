@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import Email from './Email'
+import Password from "./Password"
+import {isValidEmail, isComplexPassword, isPasswordMatch} from './formValidator'
 
 class SignupForm extends Component {
     constructor(props) {
@@ -14,10 +17,27 @@ class SignupForm extends Component {
             isPasswordMatch: false
         };
         this.handleChange = this.handleChange.bind(this);
-        this.validateEmail = this.validateEmail.bind(this);
-        this.validateComplex = this.validateComplex.bind(this);
-        this.validateMatch = this.validateMatch.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.email !== this.state.email) {
+            this.setState({
+                isValidEmail:isValidEmail(this.state.email)
+            })
+        }
+        else if (prevState.password1 !== this.state.password1) {
+            this.setState({
+                isComplexPassword:isComplexPassword(this.state.password1)
+            });
+            this.setState({
+                isPasswordMatch:isPasswordMatch(this.state.password1, this.state.password2)
+            });
+        } else if (prevState.password2 !== this.state.password2) {
+            this.setState({
+                isPasswordMatch:isPasswordMatch(this.state.password1, this.state.password2)
+            })
+        }
     }
 
     handleChange(event) {
@@ -26,52 +46,9 @@ class SignupForm extends Component {
         })
     };
 
-    validateEmail(e) {
-        const email = e.target.value;
-        const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
-        if (regExpEmail.test(email)) {
-            this.setState({
-                isValidEmail: true
-            });
-        } else {
-            this.setState({
-                isValidEmail: false
-            })
-        }
-    }
-
-    validateComplex(e) {
-        const password = e.target.value;
-        const pattern = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
-        if (pattern.test(password)) {
-            this.setState({
-                isComplexPassword: true
-            })
-        } else {
-            this.setState({
-                isComplexPassword: false
-            })
-        }
-        this.validateMatch();
-    }
-
-    validateMatch() {
-        const password2 = this.state.password2;
-        const password1 = this.state.password1;
-        if (password1 === password2) {
-            this.setState({
-                isPasswordMatch: true
-            })
-        } else {
-            this.setState({
-                isPasswordMatch: false
-            })
-        }
-    }
-
     handleSubmit() {
         const {isValidEmail, isComplexPassword, isPasswordMatch} = this.state;
-        if (isValidEmail && isComplexPassword && isPasswordMatch) {
+        if (isValidEmail === true && isComplexPassword === true && isPasswordMatch === true) {
             //TODO: send email and password to back end, recieve answer and based on that login user or show
             this.setState({
                 email: '',
@@ -97,15 +74,9 @@ class SignupForm extends Component {
                     <form className="flex-col">
                         <fieldset className="flex-col">
                             <legend>Sign up</legend>
-                            <label>Email</label>
-                            <input type="email"
-                                   name="email"
-                                   value={this.state.email}
-                                   onChange={this.handleChange}
-                                   onKeyUp={this.validateEmail}
-                            />
-                            {!this.state.isValidEmail && !!this.state.email.trim() &&
-                            (<span className="error">Please, input valid email</span>)}
+                            <Email handleChange={this.handleChange}
+                                   message={this.state.isValidEmail}
+                                   email={this.state.email}/>
                             <label>First name</label>
                             <input type="text"
                                    name="first_name"
@@ -118,22 +89,15 @@ class SignupForm extends Component {
                                    value={this.state.last_name}
                                    onChange={this.handleChange}
                             />
-                            <label>Password</label>
-                            <input type="password"
-                                   name="password1"
-                                   onChange={this.handleChange}
-                                   autoComplete="off"
-                                   onKeyUp={this.validateComplex}/>
-                            {!this.state.isComplexPassword && !!this.state.password1.trim() &&
-                            (<span className="error">Password is too weak</span>)}
-                            <label>Repeat password</label>
-                            <input type="password"
-                                   name="password2"
-                                   autoComplete="off"
-                                   onChange={this.handleChange}
-                                   onKeyUp={this.validateMatch}/>
-                            {!this.state.isPasswordMatch && !!this.state.password2.trim() &&
-                            (<span className="error">Passwords do not match</span>)}
+                            <Password handleChange={this.handleChange}
+                                      name="password1"
+                                      message={this.state.isComplexPassword}
+                                      password={this.state.password1}/>
+                            <Password handleChange={this.handleChange}
+                                      name="password2"
+                                      label={'Repeat password'}
+                                      message={this.state.isPasswordMatch}
+                                      password={this.state.password2}/>
                         </fieldset>
                         <button type="submit" onClick={this.handleSubmit}>Sign up</button>
                         <p>Have account? <a href="#loginForm"> Log in</a></p>

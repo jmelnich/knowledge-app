@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import Email from './Email'
+import {isValidEmail} from './formValidator'
 
 class RestorePasswordForm extends Component {
     constructor(props) {
@@ -9,8 +11,15 @@ class RestorePasswordForm extends Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.validateEmail = this.validateEmail.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.email !== this.state.email) {
+            this.setState({
+                isValidEmail:isValidEmail(this.state.email)
+            })
+        }
     }
 
     handleChange(event) {
@@ -18,20 +27,6 @@ class RestorePasswordForm extends Component {
             [event.target.name]: event.target.value
         })
     };
-
-    validateEmail(e) {
-        const email = e.target.value;
-        const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
-        if (regExpEmail.test(email)) {
-            this.setState({
-                isValidEmail: true
-            });
-        } else {
-            this.setState({
-                isValidEmail: false
-            })
-        }
-    }
 
     handleSubmit() {
         const {isValidEmail} = this.state;
@@ -56,15 +51,9 @@ class RestorePasswordForm extends Component {
                     <form className="flex-col">
                         <fieldset className="flex-col">
                             <legend>Restore password</legend>
-                            <label>Email</label>
-                            <input type="email"
-                                   name="email"
-                                   value={this.state.email}
-                                   onChange={this.handleChange}
-                                   onKeyUp={this.validateEmail}
-                            />
-                            {!this.state.isValidEmail && !!this.state.email.trim() &&
-                            (<span className="error">Please, input valid email</span>)}
+                            <Email handleChange={this.handleChange}
+                                   message={this.state.isValidEmail}
+                                   email={this.state.email}/>
                         </fieldset>
                         <button type="submit" onClick={this.handleSubmit}>Send</button>
                         <a href="#loginForm">Back to login</a>

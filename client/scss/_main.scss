@@ -96,7 +96,7 @@
     color: white;
   }
   #map {
-    width: 55%;
+    width: 50%;
     height: 467px;
     border: 5px solid white;
     border-radius: 0.4em;
@@ -104,13 +104,17 @@
 
   }
   .contact-form {
+    width: 45%;
     background: white;
     box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3), 0 2em 3em 0.5em rgba(0, 0, 0, 0.1), 0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
     padding: 25px;
     border-radius: 0.4em;
     height: 467px;
     textarea {
-      min-height: 140px;
+      min-height: 50px;
+    }
+    button {
+      //margin-top: 12px;
     }
   }
 }

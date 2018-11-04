@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import Email from './Email'
+import {isValidEmail, isComplexPassword} from './formValidator'
+import Password from "./Password";
 
 class LoginForm extends Component {
     constructor(props) {
@@ -10,9 +13,20 @@ class LoginForm extends Component {
             isComplexPassword: false
         };
         this.handleChange = this.handleChange.bind(this);
-        this.validateEmail = this.validateEmail.bind(this);
-        this.validateComplex = this.validateComplex.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.email !== this.state.email) {
+            this.setState({
+                isValidEmail:isValidEmail(this.state.email)
+            })
+        }
+        else if (prevState.password !== this.state.password) {
+            this.setState({
+                isComplexPassword:isComplexPassword(this.state.password)
+            })
+        }
     }
 
     handleChange(event) {
@@ -21,38 +35,10 @@ class LoginForm extends Component {
         })
     };
 
-    validateEmail(e) {
-        const email = e.target.value;
-        const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
-        if (regExpEmail.test(email)) {
-            this.setState({
-                isValidEmail: true
-            });
-        } else {
-            this.setState({
-                isValidEmail: false
-            })
-        }
-    }
-
-    validateComplex(e) {
-        const password = e.target.value;
-        const pattern = /^(?=.*\d)(?=.*[a-z])\w{6,}$/;
-        if (pattern.test(password)) {
-            this.setState({
-                isComplexPassword: true
-            })
-        } else {
-            this.setState({
-                isComplexPassword: false
-            })
-        }
-    }
-
     handleSubmit() {
         const {isValidEmail, isComplexPassword} = this.state;
-        if (isValidEmail && isComplexPassword) {
-            //TODO: send email and password to back end, recieve answer and based on that login user or show
+        if (isValidEmail === true && isComplexPassword === true) {
+            //TODO: send email and password to back end, receive answer and based on that login user or show
             this.setState({
                 email: '',
                 password: '',
@@ -73,23 +59,12 @@ class LoginForm extends Component {
                     <form className="flex-col">
                         <fieldset className="flex-col">
                             <legend>Log in</legend>
-                            <label>Email</label>
-                            <input type="email"
-                                   name="email"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                                   onKeyUp={this.validateEmail}
-                            />
-                            {!this.state.isValidEmail && !!this.state.email.trim() &&
-                            (<span className="error">Please, input valid email</span>)}
-                            <label>Password</label>
-                            <input type="password"
-                                    name="password"
-                                   autoComplete="on"
-                                   onChange={this.handleChange}
-                                   onKeyUp={this.validateComplex}/>
-                            {!this.state.isComplexPassword && !!this.state.password.trim() &&
-                            (<span className="error">Wrong password</span>)}
+                            <Email handleChange={this.handleChange}
+                                   message={this.state.isValidEmail}
+                                   email={this.state.email}/>
+                            <Password handleChange={this.handleChange}
+                                    message={this.state.isComplexPassword}
+                                    password={this.state.password}/>
                         </fieldset>
                         <a href="#restorePasswordForm">Forgot your password?</a>
                         <button type="submit" onClick={this.handleSubmit}>Log in</button>

@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import Email from '../Forms/Email';
+import Name from '../Forms/Text';
+import Message from '../Forms/TextArea'
+import {isValidEmail, isFilled} from '../Forms/formValidator'
 
 class LandingContactsForm extends Component {
     constructor(props) {
@@ -7,14 +11,39 @@ class LandingContactsForm extends Component {
             email: '',
             name: '',
             text: '',
-            isDisabled: true,
-            isValidEmail: false
+            isEnabled: false,
+            isValidEmail: false,
+            isName: false,
+            isMsg: false
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.validateEmail = this.validateEmail.bind(this);
-        this.enableButton = this.enableButton.bind(this);
+        this.switchButton = this.switchButton.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    };
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.email !== this.state.email) {
+            this.setState({
+                isValidEmail:isValidEmail(this.state.email)
+            })
+        }
+        if (this.state.isValidEmail === true && this.state.name.trim() && this.state.text.trim() && !this.state.isEnabled) {
+            this.switchButton();
+        } else if ((this.state.isValidEmail !== true || !this.state.name.trim() || !this.state.text.trim()) && this.state.isEnabled) {
+            this.switchButton();
+        }
+        if (prevState.name !== this.state.name) {
+            this.setState({
+                isName:isFilled(this.state.name)
+            })
+        }
+        if (prevState.text !== this.state.text) {
+            this.setState({
+                isMsg:isFilled(this.state.text)
+            })
+        }
+
     }
 
     handleChange(event) {
@@ -23,32 +52,11 @@ class LandingContactsForm extends Component {
         })
     };
 
-    validateEmail(e) {
-        const email = e.target.value;
-        const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
-        if (regExpEmail.test(email)) {
-            this.setState({
-                isValidEmail: true
-            }, () => this.enableButton());
-        } else {
-            this.setState({
-                isValidEmail: false
-            },() => this.enableButton())
-
-        }
-    }
-
-    enableButton() {
+    switchButton() {
         const {isValidEmail, name, text} = this.state;
-        if (isValidEmail && name.trim() && text.trim()) {
-            this.setState({
-                isDisabled: false
-            })
-        } else {
-            this.setState({
-                isDisabled: true
-            })
-        }
+        this.setState({
+            isEnabled: isValidEmail === true && name.trim() && text.trim()
+        })
     }
 
     handleSubmit() {
@@ -58,8 +66,10 @@ class LandingContactsForm extends Component {
             email: '',
             name: '',
             text: '',
-            isDisabled: true,
-            isValidEmail: false
+            isEnabled: false,
+            isValidEmail: false,
+            isName: false,
+            isMsg: false
         })
     }
 
@@ -69,25 +79,23 @@ class LandingContactsForm extends Component {
                 <form>
                     <fieldset className="flex-col">
                         <legend>Contact us</legend>
-                        <input type="email"
-                               name="email"
+                        <Email handleChange={this.handleChange}
+                               message={this.state.isValidEmail}
                                placeholder="email@gmail.com"
-                               value={this.state.email}
-                               onChange = {this.handleChange}
-                               onBlur={this.validateEmail}/>
-                        <input type="text"
-                               name="name"
+                               email={this.state.email}/>
+                        <Name handleChange={this.handleChange}
+                               message={this.state.isName}
                                placeholder="Name"
-                               value={this.state.name}
-                               onChange = {this.handleChange}
-                               onBlur={this.enableButton}/>
-                        <textarea rows="5" cols="50"
-                                  name="text"
-                                  placeholder="Your message"
-                                  value={this.state.text}
-                                  onChange = {this.handleChange}
-                                  onBlur={this.enableButton}/>
-                        <button className="submit" disabled={this.state.isDisabled} onClick={this.handleSubmit}
+                               name="name"
+                               value={this.state.name}/>
+                        <Message handleChange={this.handleChange}
+                                 rows={4} cols={50}
+                                 name="text"
+                                 placeholder="Your message"
+                                 value={this.state.text}
+                                 message={this.state.isMsg}
+                        />
+                        <button className="submit" disabled={!this.state.isEnabled} onClick={this.handleSubmit}
                                 type="submit">Send</button>
                     </fieldset>
                 </form>
