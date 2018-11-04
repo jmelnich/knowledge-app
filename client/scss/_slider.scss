@@ -13,6 +13,9 @@
     z-index: -1;
     max-height: 500px;
   }
+  .slider-text {
+    position: relative;
+  }
 }
 
 .animate-left {
@@ -21,6 +24,7 @@
 }
 
 .info {
+  height: 500px;
   margin-left: 5em;
   text-shadow: 2px 2px 4px white;
   color: $dark-bg;

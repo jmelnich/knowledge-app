@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingWelcome from './LandingWelcome'
+import LandingSlider from './LandingSlider'
 import LandingSteps from './LandingSteps'
 import LandingAbout from './LandingAbout'
 import LandingBegin from './LandingBegin'
@@ -15,7 +15,7 @@ const Landing = () => {
             <LoginForm/>
             <SignupForm/>
             <RestorePasswordForm/>
-            <LandingWelcome/>
+            <LandingSlider/>
             <main>
                 <LandingSteps/>
                 <LandingAbout/>
