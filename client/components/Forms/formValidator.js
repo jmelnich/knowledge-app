@@ -1,5 +1,5 @@
 export const isValidEmail = (email) => {
-    const regExpEmail = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+$/;
+    const regExpEmail = /^[a-zA-Z0-9.+-]+@[a-zA-Z0-9.+]+\.[a-zA-Z0-9]+$/;
     return regExpEmail.test(email) ? true : 'Please, input valid email';
 };
 
