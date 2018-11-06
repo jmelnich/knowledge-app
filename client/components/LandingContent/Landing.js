@@ -5,16 +5,16 @@ import LandingAbout from './LandingAbout'
 import LandingBegin from './LandingBegin'
 import LandingPartners from './LandingPartners'
 import LandingContacts from './LandingContacts'
-import LoginForm from '../Forms/LoginForm'
-import SignupForm from "../Forms/SignupForm";
-import RestorePasswordForm from "../Forms/RestorePasswordForm"
+import Login from '../Forms/Login'
+import Signup from "../Forms/Signup";
+import RestorePassword from "../Forms/RestorePassword"
 
 const Landing = () => {
     return (
         <div>
-            <LoginForm/>
-            <SignupForm/>
-            <RestorePasswordForm/>
+            <Login/>
+            <Signup/>
+            <RestorePassword/>
             <LandingSlider/>
             <main>
                 <LandingSteps/>

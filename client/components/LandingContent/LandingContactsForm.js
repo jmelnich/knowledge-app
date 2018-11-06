@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Email from '../Forms/Email';
-import Name from '../Forms/Text';
-import Message from '../Forms/TextArea'
-import {isValidEmail, isFilled} from '../Forms/formValidator'
+import Email from '../Forms/Inputs/Email';
+import Name from '../Forms/Inputs/Text';
+import Message from '../Forms/Inputs/TextArea'
+import {isValidEmail, isFilled} from '../Forms/Inputs/formValidator'
 
 class LandingContactsForm extends Component {
     constructor(props) {

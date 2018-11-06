@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import Email from './Email'
-import {isValidEmail} from './formValidator'
+import Email from './Inputs/Email'
+import {isValidEmail} from './Inputs/formValidator'
 
-class RestorePasswordForm extends Component {
+class RestorePassword extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -65,4 +65,4 @@ class RestorePasswordForm extends Component {
     }
 }
 
-export default RestorePasswordForm;
+export default RestorePassword;

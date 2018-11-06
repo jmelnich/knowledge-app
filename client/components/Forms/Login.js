@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Email from './Email'
-import {isValidEmail, isComplexPassword} from './formValidator'
-import Password from "./Password";
+import Email from './Inputs/Email'
+import {isValidEmail, isComplexPassword} from './Inputs/formValidator'
+import Password from "./Inputs/Password";
 
-class LoginForm extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -77,4 +77,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default Login;
