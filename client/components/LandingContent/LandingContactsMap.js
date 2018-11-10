@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {googleKey} from "../../config";
+import {isContain} from "../../utils/contains";
 
 class LandingContactsMap extends Component {
     componentDidMount() {
@@ -10,6 +11,13 @@ class LandingContactsMap extends Component {
     };
     addScript(src) {
         let ref = window.document.getElementsByTagName("script")[0];
+        let scriptCollection = window.document.getElementsByTagName("script");
+        for (let i = 0; i < scriptCollection.length; i++) {
+            if (isContain(/^https:\/\/maps.googleapis.com/, scriptCollection[i].src)) {
+                window.initMap();
+                return;
+            }
+        }
         let script = window.document.createElement("script");
         script.src = src;
         script.async = true;
@@ -29,7 +37,7 @@ class LandingContactsMap extends Component {
     };
     render() {
         return (
-            <div id="map"></div>
+            <div id="map"/>
         );
     }
 }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Carousel from '../Carousel'
+import React, { Component } from 'react';
+import Carousel from '../Carousel';
 import bg1 from '../../img/welcome-bg.jpeg';
 import bg2 from '../../img/books.jpeg';
 
@@ -21,10 +21,14 @@ class LandingSlider extends Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
+        this.interval = setInterval(() => {
             this.showNext();
-        }, 8000);
+        }, 9000);
     };
+
+    componentWillUnmount () {
+        clearTimeout(this.interval);
+    }
 
     showNext () {
         const nextIdx = this.state.idx === src.length - 1 ? 0 : this.state.idx + 1;

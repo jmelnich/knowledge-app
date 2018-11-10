@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Header = (props) => {
  return (
      <header>
          <div className="wrapper flex-row-between">
-             <div className="flex-row">
+             <Link to="/" className="flex-row">
                  <div className="logo">
                      <svg overflow="visible" width="50" height="35">
                          <path fill="none" stroke="#339966" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
@@ -15,12 +16,12 @@ const Header = (props) => {
                     <p>Knowledge</p>
                     <span>Data</span><span>base</span>
                 </div>
-             </div>
+             </Link>
              <label htmlFor="menu" className="toggle-menu">☰ Menu</label>
              <input type="checkbox" name="toggle" id="menu"/>
              <nav id="nav">
                  <ul className="flex-row">
-                     <li><a href="#">catalog</a></li>
+                     <li><Link to="/contacts">catalog</Link></li>
                      <li><a href="#about">about us</a></li>
                      <li><a href="#contacts">contacts</a></li>
                      <li><a href="#loginForm">log in</a></li>

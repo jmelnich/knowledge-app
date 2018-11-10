@@ -46,10 +46,11 @@ class Signup extends Component {
         })
     };
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         const {isValidEmail, isComplexPassword, isPasswordMatch} = this.state;
         if (isValidEmail === true && isComplexPassword === true && isPasswordMatch === true) {
-            //TODO: send email and password to back end, recieve answer and based on that login user or show
+            //TODO: send email and password to back end, receive answer and based on that login user or show
             this.setState({
                 email: '',
                 first_name: '',

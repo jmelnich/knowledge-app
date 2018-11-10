@@ -3,11 +3,14 @@ import React from 'react';
 import {render} from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 const app = () => {
     render(
         <AppContainer>
-            <App/>
+            <BrowserRouter>
+                <Route component={App}/>
+            </BrowserRouter>
         </AppContainer>,
         document.getElementById('app')
     );
