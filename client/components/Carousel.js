@@ -1,19 +1,21 @@
 import React from 'react'
 
 const Carousel = (props) => {
-    const {imgSrc, titleSrc, explSrc, showNext} = props;
+    const {imgSrc, title, caption, showNext, showPrev} = props;
     return (
-        <div>
-            <img className="animate-left" src={imgSrc} alt="slider image"/>
+        <div className="carousel-item">
+            <img src={imgSrc} alt="slider image"/>
             <div className="wrapper slider-text">
+            <i className="icon-left-open-big" onClick={showPrev}/>
                 <div className="info flex-col">
-                    <h1>{titleSrc}</h1>
-                    <p>{explSrc}</p>
+                    <h1>{title}</h1>
+                    <p>{caption}</p>
                 </div>
+            <i className="icon-right-open-big" onClick={showNext}/>
             </div>
         </div>
 
     );
-}
+};
 
 export default Carousel;

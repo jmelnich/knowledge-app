@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Carousel from '../Carousel'
+import bg1 from '../../img/welcome-bg.jpeg';
+import bg2 from '../../img/books.jpeg';
 
-const imagesSrc = ['../../client/img/welcome-bg.jpeg',
-                    '../../client/img/books.jpeg'
-];
+const src = [bg1, bg2];
 
-const titleSrc = ['All knowledge in one place', 'Find career of your dream'];
-const explSrc = ['Find, learn and keep records of all your skills', 'Share your profile with the best' +
-' companies'];
+const title = ['All knowledge in one place', 'Find career of your dream'];
+const caption = ['Find, learn and keep records of all your skills',
+                'Share your profile with the best companies'];
 
 class LandingSlider extends Component {
     constructor(props) {
@@ -17,33 +17,37 @@ class LandingSlider extends Component {
         };
 
         this.showNext = this.showNext.bind(this);
+        this.showPrev = this.showPrev.bind(this);
     }
 
     componentDidMount() {
         setInterval(() => {
             this.showNext();
-        }, 5000);
+        }, 8000);
     };
 
     showNext () {
-        if (this.state.idx >= imagesSrc.length - 1) {
-            this.setState({
-                idx: 0
-            })
-        } else {
-            this.setState((prevState) => ({
-                idx: prevState.idx + 1
-            }))
-        }
+        const nextIdx = this.state.idx === src.length - 1 ? 0 : this.state.idx + 1;
+        this.setState({
+            idx: nextIdx
+        });
+    }
+
+    showPrev () {
+        const prevIdx = this.state.idx === 0 ? src.length - 1 : this.state.idx - 1;
+        this.setState({
+            idx: prevIdx
+        });
     }
 
     render() {
         return (
             <div className="welcome">
-                <Carousel imgSrc={imagesSrc[this.state.idx]}
+                <Carousel imgSrc={src[this.state.idx]}
                           showNext={this.showNext}
-                          titleSrc={titleSrc[this.state.idx]}
-                          explSrc={explSrc[this.state.idx]}
+                          showPrev={this.showPrev}
+                          title={title[this.state.idx]}
+                          caption={caption[this.state.idx]}
                 />
             </div>
         );
