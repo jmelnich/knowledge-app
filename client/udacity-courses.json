@@ -2055,38 +2055,6 @@
     {
       "instructors": [],
       "subtitle": "",
-      "key": "ud843",
-      "image": "https://lh3.googleusercontent.com/Hp4UrpBlkIwM1VvtEOVAOaTZf9C6X0FXX0lKu3jllapJIlIw5hK_3tDzXamszoTC0PG_cswnx8y6EUl1aQ=s0#w=360&h=220",
-      "expected_learning": "With over 1.4 billion Android devices worldwide and 82% market share, Android offers you unprecedented opportunities to build apps that can be used by people around the world.\n\nThe next billion people coming online will interact with the internet for the very first time on a mobile device. Building for Android gives you the best opportunity to reach these users and make an impact -- both in your community, and on the world.",
-      "featured": false,
-      "project_name": "",
-      "teaser_video": {
-        "youtube_url": ""
-      },
-      "title": "Android Basics: Networking",
-      "required_knowledge": "The only pre-requisites for this course are the <a href=\"https://www.udacity.com/course/android-basics-user-interface--ud834\" target=\"_blank\">Android for Beginners course</a> and the <a href=\"https://www.udacity.com/course/android-basics-multiscreen-apps--ud839\" target=\"_blank\">Android Basics: Multiscreen Apps course</a>. Once you've completed both, you'll be ready to continue your education and learn to build networked apps with this course! \n\nAs with those classes, however, you do need a computer that can run Android Studio (see <a href=\"https://developer.android.com/studio/index.html#Requirements\" target=\"_blank\">Android Studio's System Requirements</a> for details).",
-      "syllabus": "Lesson 1: JSON Parsing\n \nYou'll learn how to understand and decode one of the most common data formats on the web! \n\nLesson 2: HTTP Networking\n\nYou'll learn how to connect your app to the web. \n\nLesson 3: Threads and Parallelism\n\nYou'll learn how to ask your device to do multiple things at once, allowing you to use the network without interrupting your user.",
-      "new_release": true,
-      "homepage": "https://www.udacity.com/course/android-basics-networking--ud843?utm_medium=referral&utm_campaign=api",
-      "project_description": "",
-      "full_course_available": false,
-      "faq": "",
-      "affiliates": [],
-      "tracks": [
-        "Android"
-      ],
-      "banner_image": "",
-      "short_summary": "This class teaches the basics of networking using Android, and is a part of the Android Basics Nanodegree by Google.",
-      "slug": "android-basics-networking--ud843",
-      "starter": false,
-      "level": "beginner",
-      "expected_duration_unit": "weeks",
-      "summary": "This course is a part of the <a href=\"https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803\" target=\"_blank\">Android Basics Nanodegree by Google</a>.\n\nAndroid apps are everywhere and learning to build them can be a fantastic career move. Continue on your Android app development education and learn to build multi-screen apps!\n\nThis course is designed for students who have completed the <a href=\"https://www.udacity.com/course/android-basics-user-interface--ud834\" target=\"_blank\">Android for Beginners course</a> and the <a href=\"https://www.udacity.com/course/android-basics-multiscreen-apps--ud839\" target=\"_blank\">Android Basics: Multiscreen Apps course</a>. You don’t need any programming experience besides that course!\n\nLearning anything new can be tough. We will walk you through the process of making Android apps, but to get the most out of this course, bring your enthusiasm for learning, and budget time on your calendar to learn with us. It will be an adventure!\n\nBy the end of the course, you’ll build an app that gets you up to date earthquake information!\n\nIf you’re curious about the road even farther ahead, these are the free courses that make up the Android Basics Nanodegree, in order: \n\n* <a href=\"https://www.udacity.com/course/android-basics-user-interface--ud834\" target=\"_blank\">Android Basics: User Interface</a>\n* <a href=\"https://www.udacity.com/course/android-basics-user-input--ud836\" target=\"_blank\">Android Basics: User Input</a>\n* <a href=\"https://www.udacity.com/course/android-basics-multiscreen-apps--ud839\" target=\"_blank\"> Android Basics: Multiscreen Apps</a>\n* <a href=\"https://www.udacity.com/course/android-basics-networking--ud843\" target=\"_blank\">Android Basics: Networking</a> (This Course)\n* <a href=\"https://www.udacity.com/course/android-basics-data-storage--ud845\" target=\"_blank\">Android Basics: Data Storage</a>",
-      "expected_duration": 5
-    },
-    {
-      "instructors": [],
-      "subtitle": "",
       "key": "ud845",
       "image": "",
       "expected_learning": "Data storage is an important facet of your favorite Android apps, and it can help you make compelling apps! Data storage allows your users to leave their mark on your app and have that mark persist over time. \n\nAdditionally, building data storage into your Android app is a skill that many employers look for when selecting Android developers.",
@@ -5340,52 +5308,6 @@
     {
       "instructors": [
         {
-          "bio": "Alice is a software engineer at Google who works on accessibility in Chrome. She is particularly interested in creating developer tools to assist developers with testing and debugging accessibility, and in exploring opportunities for web standards to improve the state of accessibility on the web.",
-          "image": "https://lh3.googleusercontent.com/f8JlBd33DbgBjZ2zuUcH0y1jC03Qn6jZ0NKMhOMb87iyVT4TCM1RQFcQwuppJmvERKtQI1mF4D7sumN_3A=s0#w=348&h=346",
-          "name": "Alice Boxhall"
-        },
-        {
-          "bio": "Rob Dodson is a developer advocate at Google where he focuses on Web Components and Accessibility. His mission is to fight for a better web and to help developers build great experiences. You can catch him every other week on his YouTube series \"Polycasts\" or on his blog at robdodson.me.",
-          "image": "https://lh3.googleusercontent.com/6hMTQBoiKQnhSyTS28tQluvPtF0FkWao1oek_rzR8ZzTg9dJSe45XL5q5rPoB4qzo_pMP1ngRbCZ5wIPtg=s0#w=618&h=618",
-          "name": "Rob Dodson"
-        }
-      ],
-      "subtitle": "Developing with Empathy",
-      "key": "ud891",
-      "image": "https://lh3.googleusercontent.com/mmFuCgIZGljp-Auc8mj_G7eig-0Ui5vtIQ0UTRg6zZvZGKNdgX4x6-2_mnY-vd9IMR_bDQkGglYem33jzeM=s0#w=925&h=470",
-      "expected_learning": "Not every user approaches their applications with the same abilities. Whether it’s age, vision concerns, limited hearing, a broken arm, or other limitations, everybody deserves access to their apps. This course dives into the why and how of making web applications accessible. As a bonus, accessible sites also tend to be more usable for everybody!",
-      "featured": false,
-      "project_name": "",
-      "teaser_video": {
-        "youtube_url": ""
-      },
-      "title": "Web Accessibility",
-      "required_knowledge": "Students should know HTML, CSS, and JavaScript.",
-      "syllabus": "## Lesson 1: Overview\nIn this lesson you’ll learn why accessibility matters, and who it affects. You’ll also get a first look at the web accessibility guidelines (WAI – Web Accessibility Initiative), understand what “POUR” means for accessibility, and locate checklists to help make your own sites accessible.\n\n## Lesson 2: Focus\nIn this lesson you’ll learn how to make a page usable for anyone navigating with the keyboard. This starts with an introduction to the concept of focus (the element on the page to which keyboard events will be targeted), how to make elements focusable and when, and the order in which focusable elements will be traversed when exploring the page with the keyboard. You’ll also learn how to manage focus in forms, in custom components, pop-ups, and off-screen content. \n\n## Lesson 3: Semantics Basics\nIn this lesson you’ll build on keyboard navigation to make a page work for people who are unable to use a standard user interface, including users who can't see the screen. This requires ensuring assistive technology (such as screen readers) has sufficient information to present an alternative UI. You’ll use a screen reader to try out ordinary form elements and add markup to make them work even better. You’ll understand the accessibility tree the browser constructs from the DOM. Finally, you’ll learn how to built-in HTML features to ensure the accessibility tree accurately reflects the visual UI. \n\n## Lesson 4: Semantics Extras\nIn this lesson, you’ll dive deeper into the screen-reader experience to add hyper-fast navigation. You’ll learn how to arrange headings and label links so screen reader users can fly through your pages! You’ll also learn how to call out “landmarks” into your page to speed up navigation even more. (As a bonus, this “semantic markup”  also makes your markup more readable!)\n\n## Lesson 5: Semantics - ARIA\nIn this lesson, you’ll move beyond the native elements of HTML into building custom controls and interactions. Of course you want these to be accessible, and that’s where ARIA comes in – Accessible Rich Internet Applications. You’ll learn how to add attributes to your custom interactions to make them as accessible as native elements. You’ll also learn how to manage these attributes from Javascript as the user interacts with your page.\n\n## Lesson 6: Style\nIn this lesson, you’ll learn the third pillar of Accessibility (after Focus and Semantics): Styling. Your page’s styles need to support highlighting the focus, indicating ARIA states, being zoomed in or out, and viewed by people with limited color or contrast vision. You’ll learn how to audit your page with the Chrome Accessibility Tools and correct any styling issues that pop up, as well as designing with accessibility in mind.",
-      "new_release": true,
-      "homepage": "https://www.udacity.com/course/web-accessibility--ud891?utm_medium=referral&utm_campaign=api",
-      "project_description": "",
-      "full_course_available": false,
-      "faq": "",
-      "affiliates": [
-        {
-          "image": "https://lh3.googleusercontent.com/qt46uoARQSmDmE4mOkfX-xJWPGjGcgx6i6n-EpQvINC_yuyvr3enGupQsby32tdPQ6yMTVC-GTRzOZF1YcA=s0#w=1000&h=329",
-          "name": "Google"
-        }
-      ],
-      "tracks": [],
-      "banner_image": "",
-      "short_summary": "Get hands-on experience making web applications accessible. You’ll understand when and why users need accessibility, then you’ll dive into how to implement.",
-      "slug": "web-accessibility--ud891",
-      "starter": false,
-      "level": "advanced",
-      "expected_duration_unit": "weeks",
-      "summary": "In this course you’ll get hands-on experience making web applications accessible. You’ll understand when and why users need accessibility. Then you’ll dive into the “how”: making a page work properly with screen readers, and managing input focus (e.g. the highlight you see when tabbing through a form.) You’ll understand what “semantics” and “semantic markup” mean for web pages and add ARIA markup to enable a range of assistive devices.  Finally, you’ll learn styling techniques that help users with partial vision navigate the your pages easily and reliability.",
-      "expected_duration": 6
-    },
-    {
-      "instructors": [
-        {
           "bio": "Marcus Phillips works as Dean & CTO at Hack Reactor's 12 week immersive coding school, now offered onsite or online. He has worked professionally with the full stack, but is focused on JavaScript and fine-tuning his \"rapid-iteration teaching\" approach to education. Most recently he provided technical editing to the latest edition of Eloquent JS, and also runs training tracks for JSConf and HTML5 DevConf. Prior to co-founding Hack Reactor, Marcus led several technical training initiatives and worked on the JavaScript framework internals at Twitter.",
           "image": "https://lh5.ggpht.com/dXyQPw1_zcyT9Wx-wV8MYQ_hX-H1IsrjnIjXxuX16WauPMJ8PPbJ2xbw_0zkEJTo9WDYyWzxXiGlUwv87ng=s0#w=522&h=522",
           "name": "Marcus Phillips"
@@ -5425,42 +5347,6 @@
       "expected_duration_unit": "weeks",
       "summary": "Have you been dabbling with JavaScript but find your files keep turning into a mess of spaghetti code? Do you find yourself copying and pasting lines of code over and over throughout your application? Surely there’s a better way, right? \n\nYes, there is a better way -- object-oriented programming will allow you to build websites using reusable blocks of code known as libraries, similar to using bricks to build a house. This course is designed to teach web developers how to utilize the various object-oriented programming features within JavaScript, and more importantly, how to write reusable and maintainable libraries that will make your life easier.",
       "expected_duration": 5
-    },
-    {
-      "instructors": [
-        {
-          "bio": "As an avid programmer and learner, Richard Kalehoff began teaching and found his passion. He enjoys the best of both worlds as he works as a Course Developer at Udacity. After earning a degree in computer science, he made the smart decision and moved into the world of HTML, CSS, and JavaScript. For over seven years he worked for an international nonprofit doing everything from frontend web development, to backend programming, to database and server management. Before graduating from the University of Florida’s Web Design and Online Communications Master’s program with a degree in Mass Communication, he had already been asked by the University to come on board as a faculty member. Even with the planning, building and development of courses, he still tries to make time to take in the beauty of the California countryside.",
-          "image": "https://lh3.googleusercontent.com/5Hqpv5qe5wmdyP7wQdnUg6MIuK2mPKrBQReUa5nvqotkBqQnNAAFnf5At_b_P5cZPFUxFghOkvIc2ybRmPA=s0#w=500&h=500",
-          "name": "Richard Kalehoff"
-        }
-      ],
-      "subtitle": "Build Apps with Maintainable Code",
-      "key": "ud711",
-      "image": "https://lh3.googleusercontent.com/kMKTelUJaVFqSC6ekGapZP_OwU4NKY9bFCI6azveFsIZQWHp8mJFryq5dTQG8jhwlI3PvVO2rB0Ywm2xmnHw=s0#w=854&h=480",
-      "expected_learning": "As a front-end web developer, JavaScript is one of the most important languages in your toolbox. A strong foundation in the language’s features empowers you to build efficient and performant web applications. In this course, you’ll explore a variety of ways to write object-oriented code in JavaScript. \n\nYou’ll build classes to create new objects that share similar data and functionality. You'll reduce your development time by leveraging JavaScript's prototypal inheritance model, leading to modular and reusable code. And thanks to abstraction and private state, your data will be safe and secure.",
-      "featured": false,
-      "project_name": "",
-      "teaser_video": {
-        "youtube_url": ""
-      },
-      "title": "Object-Oriented JavaScript",
-      "required_knowledge": "This course builds on the skills covered in [Intro to JavaScript](https://www.udacity.com/course/intro-to-javascript--ud803). Prior to taking this course, the student should be able to: \n\n* Explain and utilize JavaScript's primitive types\n* Write conditions and loops\n* Recognize object syntax and structure\n* Declare functions\n* Navigate and use Chrome DevTools",
-      "syllabus": "## Lesson 1: Objects in Depth\n* Create objects and add/remove properties to them\n* Write methods to access and mutate an object's properties\n* Learn how variables are properties on `window`\n\n## Lesson 2: Functions at Runtime\n* Leverage functions as _first-class_ functions\n* Identify when a scope is created\n* Utilize closures and IIFE's to build private state\n\n## Lesson 3: Classes and Objects\n* Write a constructor function to instantiate objects\n* Identify and manually set the value of `this`\n* Implement prototypal inheritance",
-      "new_release": false,
-      "homepage": "https://www.udacity.com/course/object-oriented-javascript--ud711?utm_medium=referral&utm_campaign=api",
-      "project_description": "",
-      "full_course_available": false,
-      "faq": "",
-      "affiliates": [],
-      "tracks": [],
-      "banner_image": "",
-      "short_summary": "Learn how to build objects, create classes, and manage inheritance with object-oriented JavaScript.",
-      "slug": "object-oriented-javascript--ud711",
-      "starter": false,
-      "level": "intermediate",
-      "expected_duration_unit": "weeks",
-      "summary": "This course is designed to teach web developers how to utilize the various object-oriented programming features within JavaScript. Object-oriented programming allows developers to build applications with reusable and maintainable blocks of code, which leads to efficiency and simplified software design.\n\nWith object-oriented JavaScript, you'll be able to build classes to construct objects that encapsulate both data and functionality. You'll also learn how to leverage prototypal inheritance to maintain DRY code, allowing you to pass behaviors down to objects. You'll also learn how to keep data safe and secure by creating private state with closures and immediately-invoked function expressions.",
-      "expected_duration": 3
     },
     {
       "instructors": [
@@ -7968,53 +7854,6 @@
     {
       "instructors": [
         {
-          "bio": "Gabrielle earned her Ph.D. in Population Biology from UC Davis. There in the lab, analyzing DNA sequences, she discovered the joys of programming.  Having taught science and math to undergraduate and high school students for four years, she was motivated to make apps for science education. She worked as an iOS Engineer for a year and a half before joining Udacity.",
-          "image": "https://lh6.ggpht.com/yca_AadWGhu3hepu4RDVmXnkCDX95ZzYGlemDEeXeegUejcFluGaKCmopYh8pbckN1AZfIHHWtvcQymY5fU=s0#w=992&h=992",
-          "name": "Gabrielle Miller-Messner"
-        }
-      ],
-      "subtitle": "",
-      "key": "ud1009",
-      "image": "https://lh3.googleusercontent.com/BIzZm34LnDa29wnQUzim3AMSfOgNTeg9cB3TMFy-XnkrJa5MSR4Hcx4Yay7xAYorF-CcGGlUTaGU1Ma5iKw=s0#w=1920&h=1080",
-      "expected_learning": "This course will teach you the distinguishing language features of Objective-C, including basic syntax. With this knowledge you will be able to confidently answer some of the most commonly asked interview questions related to Objective-C. You will migrate an app from Objective-C to Swift and in so doing become familiar with the experience of deciphering an unfamiliar Objective-C codebase, an experience you are likely to encounter in your first job as an iOS developer. You will also get an opportunity to practice with interoperability between Objective-C and Swift, practice negotiating the differences between the languages of iOS. \n\nWhen you look out at the iOS landscape you likely see that the number of engineers developing in Swift is growing rapidly, yet many apps and third party APIs are still written in Objective-C.  This course is designed to help prepare you for that landscape.",
-      "featured": false,
-      "project_name": "",
-      "teaser_video": {
-        "youtube_url": ""
-      },
-      "title": "Objective-C for Swift Developers",
-      "required_knowledge": "Experience writing iOS apps in Swift.",
-      "syllabus": "### Lesson 1 Objective-C and Swift, Compare and Contrast\nLearn the distinguishing language features of Objective-C.\n\n### Lesson 2 Writing Classes\nFamiliarize yourself with Objective-C syntax. Write some classes and properties from scratch. \n\n### Lesson 3 Adding Functionality to a Class: Methods and Messages\nMaster how to write and call methods in Objective-C. Build a functioning game.\n\n### Lesson 4 Migrate an App from Objective-C to Swift: Part I \nWrite custom classes and incorporate third party frameworks and extensions.\n\n### Lesson 5 Migrate an App from Objective-C to Swift: Part II \nPersist data with NSCoder and NSKeyedArchiver. Implement navigation with a collection view.\n\n### Lesson 6 Common Interoperability Challenges\nFacilitate communication between the languages of iOS. Complete a set of coding challenges to sharpen interop skills.",
-      "new_release": false,
-      "homepage": "https://www.udacity.com/course/objective-c-for-swift-developers--ud1009?utm_medium=referral&utm_campaign=api",
-      "project_description": "",
-      "full_course_available": false,
-      "faq": "",
-      "affiliates": [
-        {
-          "image": "https://lh3.googleusercontent.com/esD5FDlW5txqXtr6fXQQPRQ_YXSXxbv19HC2Vq2pW6YGuafCaQLDzhF_7W8dzXMmqK3StPKrEIX1CNifCiM=s0#w=600&h=300",
-          "name": "Venmo"
-        },
-        {
-          "image": "https://lh3.googleusercontent.com/eKHZrt1X6lVSRyanbkEuKVrSEyyJSr53WQMROt-bokddPS0zBv5R-caKBdQ6TTu2e5p4aLacXOj_Bx_W-Ys=s0#w=600&h=300",
-          "name": "Lyft"
-        }
-      ],
-      "tracks": [
-        "iOS"
-      ],
-      "banner_image": "",
-      "short_summary": "Learn the distinguishing language features of Objective-C. Practice Objective-C syntax by writing classes, and writing and calling methods.",
-      "slug": "objective-c-for-swift-developers--ud1009",
-      "starter": false,
-      "level": "intermediate",
-      "expected_duration_unit": "weeks",
-      "summary": "This course is designed to teach students how to understand and identify the differences between the Objective-C and Swift programming languages, and especially, how to rewrite from the former to the latter. Understanding communications between the two languages—called \"interoperability\"—is becoming more and more important for developers, particularly as we prepare for the arrival of Swift 3.0. In the course, students will write classes and add functionality to classes by writing and calling methods. After learning some basic Objective-C syntax, students will examine and break down an app written in Objective-C and rewrite it in Swift. The course will conclude with a review of and practice with the most common challenges for interoperability between Objective-C and Swift.",
-      "expected_duration": 5
-    },
-    {
-      "instructors": [
-        {
           "bio": "Colt Steele is a Content Developer at Udacity and was previously Curriculum Director at Galvanize and a Lead Instructor at General Assembly. He studied Computer Science and Marketing at New York University, and enjoys running, origami, and backpacking in his spare time. He also has an adorable cat named Blue Steele.",
           "image": "https://lh3.googleusercontent.com/8rctkPWuAw67ZiuwzbDiGdl46yUbZVxwBW3Uk5Iw6fcgsN-b5H8__opLQzuR9yIgZXguVzkFy4YwnuE4-w=s0#w=476&h=512",
           "name": "Colt Steele"
@@ -8281,75 +8120,6 @@
       "expected_duration_unit": "",
       "summary": "This is a survey course designed to provide a broad, forward-facing overview of contemporary health informatics, a specialized field of computing that seeks to improve the quality and efficiency of healthcare delivery.  To understand health informatics (HIT) you also need to have at least a basic understanding of the complex and highly regulated US healthcare industry.  The course is designed for students from diverse backgrounds and who have not been previously exposed to HIT. It is divided into three sections:  \n\n1.  The US healthcare delivery and the key role of the federal government in promoting HIT adoption\n\n2. The core technologies that drive all contemporary HIT systems and tools\n\n3. The real world applications of HIT from electronic medical and personal health records to exploiting digital data aggregated from them for research and other purposes",
       "expected_duration": 0
-    },
-    {
-      "instructors": [],
-      "subtitle": "Android Basics: User Interface",
-      "key": "ud834",
-      "image": "https://lh3.googleusercontent.com/OuxjCWSkZiR7EfOSHGk78j0f2-AEIyYAgjUdU-JCRKd8D7RhDW8yl4Z7fUq4AruPyWvBwO3PdY7fzvbLFdWE=s0#w=277&h=170",
-      "expected_learning": "If you're a consumer of technology, this course will help you to become a creator of technology. You are only limited by your imagination!\n\nAndroid powers over 80 percent of the world’s smartphones, and represents an incredible opportunity for developers everywhere. The next billion people coming online will interact with the internet for the very first time on a mobile device. \n\nBuilding for Android gives you the best opportunity to reach these users and make an impact -- both in your community, and on the world.",
-      "featured": false,
-      "project_name": "",
-      "teaser_video": {
-        "youtube_url": ""
-      },
-      "title": "Android for Beginners",
-      "required_knowledge": "If you are new to programming and don’t know where to start, then this is the course for you!\n\nWe will use Android Studio to build our apps, so you should have access to a computer that can run Android Studio in order to follow along (see <a href=\"https://developer.android.com/studio/index.html#Requirements\" target=\"_blank\">Android Studio's System Requirements</a> for details). Don’t worry, **you do not need to install Android Studio in advance** -- we will provide detailed installation instructions as part of the course.\n\nAccess to an Android device is helpful, but not at all required.\n\nNow, in case you have some programming experience, parts of this course may be too slow for you — you should feel free to skip those sections.\n\nFinally, the **most important prerequisite** is a willingness to learn new things, and belief that you can do this!",
-      "syllabus": "## Lesson 1: Building layouts\nTake your hand drawn app designs and lay them out on the phone screen. In this lesson you’ll learn the XML markup language used to lay out Android applications. You’ll create views, the basic building block of Android layouts, that display text and images. Then you’ll position your text and images on these screens. This highly interactive lesson encourages experimentation through coding challenges in Udacity’s XML Visualizer.\n\n## Practice Set 1\nCreate a birthday card application for your phone. You’ll start by installing Android Studio, a program used by professional developers to make Android applications. You’ll then transfer a simple application you create from your computer to your phone. Following that, you’ll take all the concepts you learned in Lesson 1 to build your birthday card app, and install it on your phone for your friends and family to see.",
-      "new_release": false,
-      "homepage": "https://www.udacity.com/course/android-for-beginners--ud834?utm_medium=referral&utm_campaign=api",
-      "project_description": "",
-      "full_course_available": false,
-      "faq": "",
-      "affiliates": [],
-      "tracks": [
-        "Android"
-      ],
-      "banner_image": "",
-      "short_summary": "Learn how to design your first layout in Android! This is the first course in the Android Basics Nanodegree program.",
-      "slug": "android-for-beginners--ud834",
-      "starter": true,
-      "level": "beginner",
-      "expected_duration_unit": "weeks",
-      "summary": "Learn the basics of Android and Java programming, and take the first step on your journey to becoming an Android developer!\n\nThis course is designed for students who are new to programming, and want to learn how to build Android apps. You don’t need any programming experience to take this course. If you’ve been using a smartphone to surf the web and chat with friends, then you’re our perfect target student!\n\nLearning anything new can be tough. We will walk you through the process of making Android apps, but to get the most out of this course, you must bring your enthusiasm for learning, and budget time on your calendar to learn with us.\n\nBy the end of this course, you will have learned how to build an app’s layout and then practiced those skills by making a birthday card app.\n\nIf you’re curious about the road even farther ahead, these are the free courses that make up the Android Basics Nanodegree, in order: \n\n* <a href=\"https://www.udacity.com/course/android-basics-user-interface--ud834\" target=\"_blank\">Android Basics: User Interface</a> (This Course)\n* <a href=\"https://www.udacity.com/course/android-basics-user-input--ud836\" target=\"_blank\">Android Basics: User Input</a>\n* <a href=\"https://www.udacity.com/course/android-basics-multiscreen-apps--ud839\" target=\"_blank\">Android Basics: Multiple App Screens</a>\n* <a href=\"https://www.udacity.com/course/android-basics-networking--ud843\" target=\"_blank\">Android Basics: Networking</a>\n* <a href=\"https://www.udacity.com/course/android-basics-data-storage--ud845\" target=\"_blank\">Android Basics: Data Storage</a>",
-      "expected_duration": 2
-    },
-    {
-      "instructors": [],
-      "subtitle": "",
-      "key": "ud836",
-      "image": "https://lh3.googleusercontent.com/VIkSp8zDuuOf4m6ceNkAFbvC_oiUYPI7ZG98KMpu_0GNmIXNUyfdEEzuQmqCKkeOm47TVAnM9C9NxmCT6B8=s0#w=1440&h=807",
-      "expected_learning": "If you're a consumer of technology, this course will help you to become a creator of technology. You are only limited by your imagination!\n\nAndroid powers over 80 percent of the world’s smartphones, and represents an incredible opportunity for developers everywhere. The next billion people coming online will interact with the internet for the very first time on a mobile device. Building for Android gives you the best opportunity to reach these users and make an impact -- both in your community, and on the world.",
-      "featured": false,
-      "project_name": "",
-      "teaser_video": {
-        "youtube_url": ""
-      },
-      "title": "Android Basics: User Input",
-      "required_knowledge": "If you have learned the basics of Android layouts and XML, then this is the course for you!\n\nWe will use Android Studio to build our apps, so you should have access to a computer that can run Android Studio in order to follow along (see <a href=\"https://developer.android.com/studio/index.html#Requirements\" target=\"_blank\">Android Studio's System Requirements</a> for details). Don’t worry, **you do not need to install Android Studio in advance** -- we will provide detailed installation instructions as part of the course.\n\nAccess to an Android device is helpful, but not at all required.\n\nNow, in case you have some programming experience, parts of this course may be too slow for you — you should feel free to skip those sections.\n\nFinally, the **most important prerequisite** is a willingness to learn new things, and belief that you can do this!",
-      "syllabus": "## Lesson 2: Making an App Interactive\nHarness the power of Java to create an interactive coffee ordering app! You’ll start by writing simple statements in Java that add interactivity to your app. You’ll then incorporate buttons to trigger events. You’ll finally use a fundamental concept in programming, a variable, to keep track of all the coffee drinks ordered.\n## Practice Set 2\nReinforce the skills learned in Lesson 2 by creating a basketball score tracker. The first part of the practice set will solidify how to write and use variables before creating your basketball score tracker app.\n## Lesson 3: Control Flow\nTake a deeper dive into the Android Framework to complete the Just Java coffee ordering app! You’ll see in more detail how Android works behind the scenes and take your first steps towards learning Object Oriented Programming. You’ll add the ability to add toppings to your coffee, and show a detailed order summary when the customer purchases a coffee.",
-      "new_release": false,
-      "homepage": "https://www.udacity.com/course/android-basics-user-input--ud836?utm_medium=referral&utm_campaign=api",
-      "project_description": "",
-      "full_course_available": false,
-      "faq": "",
-      "affiliates": [
-        {
-          "image": "https://lh3.googleusercontent.com/qt46uoARQSmDmE4mOkfX-xJWPGjGcgx6i6n-EpQvINC_yuyvr3enGupQsby32tdPQ6yMTVC-GTRzOZF1YcA=s0#w=1000&h=329",
-          "name": "Google"
-        }
-      ],
-      "tracks": [
-        "Android"
-      ],
-      "banner_image": "",
-      "short_summary": "Learn how to make your apps interactive using buttons and text! In this course you'll learn the basics of the Java programming language and how to apply them to Android.",
-      "slug": "android-basics-user-input--ud836",
-      "starter": true,
-      "level": "beginner",
-      "expected_duration_unit": "weeks",
-      "summary": "Learn the basics of Android and Java programming, and take the first step on your journey to becoming an Android developer!\nThis course is designed for students who are new to programming, and want to learn how to build Android apps. You don’t need any programming experience to take this course. If you’ve been using a smartphone to surf the web and chat with friends, then you’re our perfect target student!\n\nLearning anything new can be tough. We will walk you through the process of making Android apps, but to get the most out of this course, you must bring your enthusiasm for learning, and budget time on your calendar to learn with us.\n\nBy the end of this course, you will have learned how to make your app interactive using buttons and changing text. You will have practiced those skills by making a basketball scores app, and you will have built a full coffee-ordering app.\n\nIf you’re curious about the road even farther ahead, these are the free courses that make up the Android Basics Nanodegree, in order: \n\n* <a href=\"https://www.udacity.com/course/android-basics-user-interface--ud834\" target=\"_blank\">Android Basics: User Interface</a> \n* <a href=\"https://www.udacity.com/course/android-basics-user-input--ud836\" target=\"_blank\">Android Basics: User Input</a> (This Course)\n* <a href=\"https://www.udacity.com/course/android-basics-multiscreen-apps--ud839\" target=\"_blank\"> Android Basics: Multiscreen Apps </a>\n* <a href=\"https://www.udacity.com/course/android-basics-networking--ud843\" target=\"_blank\">Android Basics: Networking</a>\n* <a href=\"https://www.udacity.com/course/android-basics-data-storage--ud845\" target=\"_blank\">Android Basics: Data Storage</a>",
-      "expected_duration": 4
     },
     {
       "instructors": [

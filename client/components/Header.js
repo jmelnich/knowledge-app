@@ -21,7 +21,7 @@ const Header = (props) => {
              <input type="checkbox" name="toggle" id="menu"/>
              <nav id="nav">
                  <ul className="flex-row">
-                     <li><Link to="/contacts">catalog</Link></li>
+                     <li><Link to="/catalog">catalog</Link></li>
                      <li><a href="#about">about us</a></li>
                      <li><a href="#contacts">contacts</a></li>
                      <li><a href="#loginForm">log in</a></li>
