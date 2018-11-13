@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Email from './Inputs/Email'
-import {isValidEmail, isComplexPassword} from './Inputs/formValidator'
+import {isValidEmail} from './Inputs/formValidator'
 import Password from "./Inputs/Password";
 
 class Login extends Component {
@@ -9,8 +9,7 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            isValidEmail: false,
-            isComplexPassword: false
+            isValidEmail: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,11 +21,6 @@ class Login extends Component {
                 isValidEmail:isValidEmail(this.state.email)
             })
         }
-        else if (prevState.password !== this.state.password) {
-            this.setState({
-                isComplexPassword:isComplexPassword(this.state.password)
-            })
-        }
     }
 
     handleChange(event) {
@@ -36,14 +30,13 @@ class Login extends Component {
     };
 
     handleSubmit() {
-        const {isValidEmail, isComplexPassword} = this.state;
-        if (isValidEmail === true && isComplexPassword === true) {
+        const {isValidEmail} = this.state;
+        if (isValidEmail === true) {
             //TODO: send email and password to back end, receive answer and based on that login user or show
             this.setState({
                 email: '',
                 password: '',
-                isValidEmail: false,
-                isComplexPassword: false
+                isValidEmail: false
             });
             alert('Logging in...');
         } else {
@@ -63,7 +56,6 @@ class Login extends Component {
                                    message={this.state.isValidEmail}
                                    email={this.state.email}/>
                             <Password handleChange={this.handleChange}
-                                    message={this.state.isComplexPassword}
                                     password={this.state.password}/>
                         </fieldset>
                         <a href="#restorePasswordForm">Forgot your password?</a>

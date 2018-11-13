@@ -1,91 +1,119 @@
-.courses-block {
-  .course {
-    height: 400px;
-    width: 500px;
-    margin: 1.4em;
-    border-radius: 0.4em;
-    box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3),
-    0 2em 3em 0.5em rgba(0, 0, 0, 0.1),
-    0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
-    header {
+.course {
+  position: relative;
+  height: 360px;
+  width: 460px;
+  margin: 2.4em 1.4em;
+  box-shadow: 0 1.7em 5.5em -0.94em rgba(0, 0, 0, 0.3),
+  0 2em 3em 0.5em rgba(0, 0, 0, 0.1),
+  0 1.8em 2em -1.5em rgba(0, 0, 0, 0.2);
+  header {
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: linear-gradient(-120deg, #25fb9f 0%, $accent 100%);
+    background-position: 0 0;
+    background-size: 300%;
+    transition: all 0.5s ease-out;
+    .course-head {
+      padding: 0 25px;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    h3 {
+      margin-top: 10px;
+    }
+    img {
+      max-width: 100px;
+      max-height: 50px;
+    }
+    p {
+      padding: 0 40px 30px 40px;
+      text-transform: none;
+      line-height: 1.4em;
+      height: 9.2em;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+    a {
+      position: relative;
+      bottom: -20px;
+      left: 260px;
+      font-family: $OpenSans-Regular;
+      text-align: right;
+      transition: 0.3s;
+      font-size: 0.9em;
+      &:hover {
+        color: $dark-bg;
+      }
+      &:after {
+        content: '\2192';
+        padding-left: 4px;
+      }
+    }
+  }
+  .course-content {
+    position: relative;
+    margin-top: 45px;
+    padding: 25px;
+    height: 260px;
+    transition: all 0.3s ease-out;
+    h3 {
+      text-transform: uppercase;
+      line-height: 1.4em;
+      height: 1.4em;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+    p {
+      margin: 15px 0;
+    }
+  }
+  footer {
+    background-color: $separator;
+    font-family: $OpenSans-Regular;
+    color: $dark-bg;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    justify-content: space-between;
+    .category {
       display: flex;
       align-items: center;
-      padding: 0 25px;
-      justify-content: space-between;
-      background-image: linear-gradient(-120deg, #25fb9f 0%, $accent 100%);
-      background-position: 0 0;
-      background-size: 300%;
-      transition: all 0.3s ease-out;
-      img {
-        max-width: 100px;
-        max-height: 50px;
-
+      p {
+        text-transform: uppercase;
+        margin-right: 10px;
       }
       span {
-        font-family: $OpenSans-Regular;
         text-transform: capitalize;
         color: $dark-bg;
         font-size: 0.9em;
-      }
-    }
-    .course__content {
-      position: relative;
-      padding: 25px;
-      height: 240px;
-      p:first-of-type {
-        margin: 15px 0;
-        font-family: $FiraSans-Medium;
-      }
-      p:last-of-type {
-        line-height: 1.4em;
-        height: 8em;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-      }
-      a {
-        position: absolute;
-        bottom: 15px;
-        right: 35px;
-        font-family: $OpenSans-Regular;
-        text-align: right;
+        padding-right: 4px;
+        cursor: pointer;
         transition: 0.3s;
-        font-size: 0.9em;
         &:hover {
-          color: $accent;
-        }
-        &:after {
-          content: '\2192';
-          padding-left: 4px;
+          color: white;
         }
       }
     }
-    footer {
-      background-color: $separator;
-      font-family: $OpenSans-Regular;
-      color: $dark-bg;
-      justify-content: space-between;
-      .category {
-        display: flex;
-        align-items: center;
-        p {
-          text-transform: uppercase;
-          margin-right: 10px;
-        }
-        span {
-          text-transform: capitalize;
-          color: $dark-bg;
-          font-size: 0.9em;
-          padding-right: 4px;
-          cursor: pointer;
-          transition: 0.3s;
-          &:hover {
-            color: white;
-          }
-        }
-      }
+  }
+}
+
+
+.course {
+  &:hover {
+    header {
+      height: 360px;
+      z-index: 1;
     }
   }
 }
