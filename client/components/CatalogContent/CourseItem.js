@@ -19,7 +19,8 @@ const CourseItem = (props) => {
             <section className="course-content">
                 <h3>{course.title}</h3>
                 <div className="course-cover"
-                     style={{ width: 410, height: 180, backgroundImage: `url(${course.image})`, backgroundSize: "cover"}}/>
+                     style={{ width: 410, height: 180, backgroundImage: `url(${course.image})`,
+                         backgroundSize: "cover"}}/>
                 <p>{course.subtitle}</p>
             </section>
             <footer>
