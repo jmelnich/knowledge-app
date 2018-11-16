@@ -4,11 +4,11 @@ import udacity from '../../img/affiliates/u.png'
 const CourseItem = (props) => {
     const {course} = props;
     return (
-        <article className="course">
+        <article key={course.key} className="course">
             <header>
                 <div className="course-head">
                 <div className="course-head__affiliate">{course.affiliates.map(aff => (
-                    <img src={aff.image || udacity} alt={aff.name}/>
+                    <img key={aff.name} src={aff.image || udacity} alt={aff.name}/>
                 ))}</div>
                 <div className="course-head__source">Udacity</div>
                 </div>
@@ -26,8 +26,8 @@ const CourseItem = (props) => {
             <footer>
                 <div className="category">
                     <p>Categories:</p>
-                    {course.tracks.length === 0 ? <span>General</span> : course.tracks.map(category => (
-                    <span>{category}</span>
+                    {course.tracks.length === 0 ? <span>General</span> : course.tracks.map((category, i) => (
+                    <span key={i}>{category}</span>
                 ))}
                 </div>
                 <div className="user-finish"></div>

@@ -6,16 +6,32 @@ class Catalog extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            query: ''
+            query: '',
+	        platform: [],
+	        category: [],
+	        level: [],
+	        duration: []
         };
         this.updateQuery = this.updateQuery.bind(this);
+        this.searchByTitle = this.searchByTitle.bind(this);
     }
 
     updateQuery(event) {
-        this.setState({query: event.target.value.trim()});
+    	const request = event.target.value;
+        this.setState({query: request});
     }
 
+	searchByTitle(request) {
+    	console.log('req', request);
+    	const regex = new RegExp(`${request}`, "i");
+		return udacity.courses.filter(item => regex.test(item.title));
+	}
+
     render () {
+    	let courses = udacity.courses;
+    	if (this.state.query) {
+		    courses = this.searchByTitle(this.state.query);
+	    }
         return (
             <main>
                 <section id="catalog">
@@ -73,7 +89,7 @@ class Catalog extends Component {
 	                            </fieldset>
                             </form>
                             <div className="flex-row courses-block">
-                                {udacity.courses.map(item => (
+                                {courses.map(item => (
                                     <CourseItem key={item.key} course={item}/>
                                 ))}
                             </div>

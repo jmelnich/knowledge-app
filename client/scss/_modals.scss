@@ -1,6 +1,7 @@
 @import "variables";
 
-#loginForm, #signUpForm, #restorePasswordForm{
+#loginForm, #signUpForm, #restorePasswordForm {
+  overflow-y: auto;
   display: none;
   position: fixed;
   top: 0;
