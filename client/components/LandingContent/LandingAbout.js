@@ -19,7 +19,7 @@ const LandingAbout = () => {
                             </p>
                         </li>
                         <li>
-                            <i className="icon-comment-empty"/>
+                            <i className="icon-comment"/>
                             <p>Support: Resume reviews, interview prep, expert career guidance.</p>
                         </li>
                         <li>

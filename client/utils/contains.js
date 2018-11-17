@@ -1,3 +1,3 @@
-export const isContain = (pattern, str) => {
-    return pattern.test(str);
+export const isContain = (regex, str) => {
+    return regex.test(str);
 };

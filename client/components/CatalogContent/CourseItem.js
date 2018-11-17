@@ -1,5 +1,6 @@
 import React from 'react';
-import udacity from '../../img/affiliates/u.png'
+import udacity from '../../img/affiliates/u-affiliate.png'
+import uBg from '../../img/udacity-default.png'
 
 const CourseItem = (props) => {
     const {course} = props;
@@ -19,19 +20,26 @@ const CourseItem = (props) => {
             <section className="course-content">
                 <h3>{course.title}</h3>
                 <div className="course-cover"
-                     style={{ width: 410, height: 180, backgroundImage: `url(${course.image})`,
-                         backgroundSize: "cover"}}/>
+                     style={{ backgroundImage: `url(${course.image || uBg})`}}
+                />
                 <p>{course.subtitle}</p>
             </section>
             <footer>
                 <div className="category">
-                    <p>Categories:</p>
                     {course.tracks.length === 0 ? <span>General</span> : course.tracks.map((category, i) => (
                     <span key={i}>{category}</span>
-                ))}
+                    ))}
                 </div>
-                <div className="user-finish"></div>
-                <div className="user-to-complete"></div>
+                <div className="level-time-info">
+                    <i className="icon-signal"/>
+                    <span>{course.level || "No level"}</span>
+                    <i className="icon-clock"/>
+                    <span>{course.expected_duration}{" "}{course.expected_duration_unit}</span>
+                </div>
+                <div className="course__manage">
+                    <i className="icon-ok-circled"/>
+                    <i className="icon-plus-circle"/>
+                </div>
             </footer>
         </article>
     );
