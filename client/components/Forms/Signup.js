@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import Email from './Inputs/Email'
-import Password from "./Inputs/Password"
-import {isValidEmail, isComplexPassword, isPasswordMatch} from './Inputs/formValidator'
+import Email from './Inputs/Email';
+import Password from "./Inputs/Password";
+import {isValidEmail, isComplexPassword, isPasswordMatch} from './Inputs/formValidator';
+import {signUpUser} from '../../actions/formsActions';
+import {connect} from "react-redux";
 
 class Signup extends Component {
     constructor(props) {
@@ -50,7 +52,13 @@ class Signup extends Component {
         e.preventDefault();
         const {isValidEmail, isComplexPassword, isPasswordMatch} = this.state;
         if (isValidEmail === true && isComplexPassword === true && isPasswordMatch === true) {
-            //TODO: send email and password to back end, receive answer and based on that login user or show
+            const user = {
+                email: this.state.email,
+                first_name: this.state.first_name,
+                last_name: this.state.last_name,
+                password: this.state.password1,
+            };
+            this.props.signUpUser(user);
             this.setState({
                 email: '',
                 first_name: '',
@@ -109,4 +117,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default connect(null, {signUpUser})(Signup);
