@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const LandingBegin = () => {
     return (
@@ -7,7 +7,7 @@ const LandingBegin = () => {
                 <div className="section-content flex-col">
                     <h2>Ready to begin?</h2>
                     <h3>Take the advantage of our knowledge base today</h3>
-                    <button>Sign up</button>
+                    <a href="#signUpForm"><button >Sign up</button></a>
                 </div>
             </div>
         </section>

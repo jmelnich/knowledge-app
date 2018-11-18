@@ -58,8 +58,13 @@ class Catalog extends Component {
         if (category.length) {
             let arr = [];
             for (let i = 0; i < category.length; i++) {
-                arr = arr.concat(courses.filter(course => course.tracks[0] === category[i]
-					|| course.tracks[1] === category[i]));
+                arr = arr.concat(courses.filter(course => {
+                    if (course.tracks.length === 0 && category[i] === "general") {
+                        return true;
+                    } else if (course.tracks[0] === category[i] || course.tracks[1] === category[i]) {
+                        return true;
+                    }
+                }));
             }
             courses = arr;
         }
@@ -75,7 +80,8 @@ class Catalog extends Component {
 							break;
 						case "1":
 							if ((course.expected_duration_unit === "months" && course.expected_duration <= 3) ||
-								(course.expected_duration_unit === "weeks" && course.expected_duration >= 5 && course.expected_duration <= 12))
+								(course.expected_duration_unit === "weeks" &&
+                                    course.expected_duration >= 5 && course.expected_duration <= 12))
 								return true;
 							break;
 						case "3":
@@ -118,7 +124,6 @@ class Catalog extends Component {
             </main>
         );
     }
-
 }
 
 export default Catalog;

@@ -4,6 +4,9 @@ import Footer from './Footer';
 import Landing from "./LandingContent/Landing";
 import {Route, Switch} from 'react-router-dom';
 import Catalog from "./CatalogContent/Catalog";
+import Login from './Forms/Login';
+import Signup from "./Forms/Signup";
+import RestorePassword from "./Forms/RestorePassword";
 
 class App extends Component {
     render() {
@@ -14,6 +17,9 @@ class App extends Component {
                     <Route exact path='/' component={Landing}/>
                     <Route path='/catalog' component={Catalog}/>
                 </Switch>
+                <Login/>
+                <Signup/>
+                <RestorePassword/>
                 <Footer/>
             </div>
         )}
