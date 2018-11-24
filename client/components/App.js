@@ -7,6 +7,7 @@ import Catalog from "./CatalogContent/Catalog";
 import Login from './Forms/Login';
 import Signup from "./Forms/Signup";
 import RestorePassword from "./Forms/RestorePassword";
+import Profile from './Profile/Profile';
 
 class App extends Component {
     render() {
@@ -16,6 +17,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={Landing}/>
                     <Route path='/catalog' component={Catalog}/>
+                    <Route path='/profile' component={Profile}/>
                 </Switch>
                 <Login/>
                 <Signup/>

@@ -1,0 +1,20 @@
+@import "variables";
+
+#profile {
+  display: flex;
+  nav {
+    width: 250px;
+    background-color: $dark-bg;
+    color: white;
+    font-family: $OpenSans-Light;
+    ul {
+      padding: 3em 2em 3em 4em;
+      li {
+        padding: 1rem 0;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}

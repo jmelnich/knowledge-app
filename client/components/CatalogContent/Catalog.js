@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import udacity from '../../udacity-courses.json';
 import CourseItem from "./CourseItem";
 import FilterAll from "./FilterAll";
+import styles from './catalog.scss'
 
 class Catalog extends Component {
     constructor(props) {
@@ -120,7 +121,6 @@ class Catalog extends Component {
                         </div>
                     </div>
                 </section>
-
             </main>
         );
     }

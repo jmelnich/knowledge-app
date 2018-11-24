@@ -27,6 +27,38 @@ header {
       font-size: 0.7em;
     }
   }
+
+  nav {
+    li {
+      font-size: 0.8em;
+      &:not(:first-child) {
+        &:before {
+          content: "|";
+        }
+      }
+      a {
+        padding: 10px 15px;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+          color: $accent;
+        }
+      }
+      &:first-child {
+        &:after {
+          content: "\25bc";
+          font-size: 0.8em;
+          margin: 0 10px 0 -11px;
+          transition: 0.3s;
+        }
+        &:hover{
+          &:after {
+            color: $accent;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -35,37 +67,6 @@ header {
   display: none;
 }
 
-nav {
-  li {
-    font-size: 0.8em;
-    &:not(:first-child) {
-      &:before {
-        content: "|";
-      }
-    }
-    a {
-      padding: 10px 15px;
-      color: white;
-      transition: 0.3s;
-      &:hover {
-        color: $accent;
-      }
-    }
-    &:first-child {
-      &:after {
-        content: "\25bc";
-        font-size: 0.8em;
-        margin: 0 10px 0 -11px;
-        transition: 0.3s;
-      }
-      &:hover{
-        &:after {
-          color: $accent;
-        }
-      }
-    }
-  }
-}
 
 @media screen and (max-width: 768px) {
   /* hide nav, show burger */
