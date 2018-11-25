@@ -23,6 +23,9 @@ app.use(bodyParser.json());
 /* Define routes */
 app.use('/user/', user);
 
+/* This is for ensuring access to files */
+app.use(express.static(path.join(__dirname, "/public")));
+
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));

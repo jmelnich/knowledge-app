@@ -41,7 +41,7 @@ header {
         color: white;
         transition: 0.3s;
         &:hover {
-          color: $accent;
+          color: $lighter-accent;
         }
       }
       &:first-child {

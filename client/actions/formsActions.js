@@ -1,8 +1,8 @@
-export const SVR ='http://localhost:5000';
+import {baseURL} from "../config";
 
 export const signUpUser = (user) => (dispatch) => {
     console.log(user);
-    fetch(`${SVR}/user/add`, {
+    fetch(`${baseURL}/user/add`, {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {"Content-Type": "application/json",
