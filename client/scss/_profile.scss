@@ -24,3 +24,21 @@
     }
   }
 }
+
+.user-details {
+  margin-right: 6em;
+  .user-details__image {
+    align-self: flex-start;
+  }
+  img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid $separator;
+  }
+  .user-details__info {
+    margin-top: 1em;
+    padding: 1em 1em 0 0;
+    width: 450px;
+  }
+}

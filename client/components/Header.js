@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {baseURL} from '../config'
+import Nav from './Navigation';
 
 const Header = (props) => {
  return (
@@ -20,14 +20,7 @@ const Header = (props) => {
              </Link>
              <label htmlFor="menu" className="toggle-menu">☰ Menu</label>
              <input type="checkbox" name="toggle" id="menu"/>
-             <nav id="nav">
-                 <ul className="flex-row">
-                     <li><Link to="/catalog">catalog</Link></li>
-                     <li><a href={`${baseURL}/#about`}>about us</a></li>
-                     <li><a href={`${baseURL}/#contacts`}>contacts</a></li>
-                     <li><a href="#loginForm">log in</a></li>
-                 </ul>
-             </nav>
+             <Nav/>
          </div>
      </header>
  )

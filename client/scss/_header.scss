@@ -29,31 +29,41 @@ header {
   }
 
   nav {
-    li {
-      font-size: 0.8em;
-      &:not(:first-child) {
-        &:before {
-          content: "|";
+    ul.main-nav> {
+      li {
+        font-size: 0.8em;
+        &:not(:first-child){
+          &:before {
+            content: "|";
+          }
         }
-      }
-      a {
-        padding: 10px 15px;
-        color: white;
-        transition: 0.3s;
-        &:hover {
-          color: $lighter-accent;
+        /*drop-down-li*/
+        &:nth-child(2){
+          &:before {
+            content: "";
+          }
         }
-      }
-      &:first-child {
-        &:after {
-          content: "\25bc";
-          font-size: 0.8em;
-          margin: 0 10px 0 -11px;
+
+        a {
+          cursor: pointer;
+          padding: 10px 15px;
+          color: white;
           transition: 0.3s;
+          &:hover {
+            color: $lighter-accent;
+          }
         }
-        &:hover{
+        &:first-child {
           &:after {
-            color: $accent;
+            content: "\25bc";
+            font-size: 0.8em;
+            margin: 0 10px 0 -11px;
+            transition: 0.3s;
+          }
+          &:hover{
+            &:after {
+              color: $accent;
+            }
           }
         }
       }
@@ -61,6 +71,22 @@ header {
   }
 }
 
+li.drop-down {
+  position: relative;
+  ul {
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(49, 56, 64, 0.8);
+    left: -100px;
+    width: 250px;
+    top: 30px;
+    font-size: 1.1em;
+    text-transform: capitalize;
+    li {
+      padding: 0.9em 0.3em;
+    }
+  }
+}
 
 
 #menu, .toggle-menu {
