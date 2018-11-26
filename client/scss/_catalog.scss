@@ -94,11 +94,13 @@
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
     justify-content: space-between;
-    font-size: 0.9em;
+    font-size: 0.8em;
     cursor: pointer;
     .category {
       display: flex;
       align-items: center;
+      max-width: 155px;
+      overflow: hidden;
     }
   }
 }
@@ -159,7 +161,7 @@
     margin-left: 5px;
     transition: 0.3s;
     &:first-of-type {
-      margin-right: 15px;
+      margin-right: 10px;
     }
   }
 }
@@ -171,4 +173,8 @@
   &:hover {
     color: white;
   }
+}
+
+.course__manage i.active {
+  color: $accent;
 }

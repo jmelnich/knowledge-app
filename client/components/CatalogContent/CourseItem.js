@@ -1,6 +1,7 @@
 import React from 'react';
-import udacity from '../../img/affiliates/u-affiliate.png'
-import uBg from '../../img/udacity-default.png'
+import udacity from '../../img/affiliates/u-affiliate.png';
+import uBg from '../../img/udacity-default.png';
+import CourseManage from './CourseManage'
 
 const CourseItem = (props) => {
     const {course} = props;
@@ -36,13 +37,10 @@ const CourseItem = (props) => {
                     <i className="icon-clock"/>
                     <span>{course.expected_duration}{" "}{course.expected_duration_unit}</span>
                 </div>
-                <div className="course__manage">
-                    <i className="icon-ok-circled"/>
-                    <i className="icon-plus-circle"/>
-                </div>
+			    <CourseManage course={course}/>
             </footer>
         </article>
     );
-}
+};
 
 export default CourseItem;
