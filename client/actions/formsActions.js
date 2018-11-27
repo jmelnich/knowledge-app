@@ -1,7 +1,16 @@
+import {ADD_FLASH, DISMISS_FLASH, SET_CURRENT_USER} from './types';
 import {baseURL} from "../config";
 
+const assignFlashMsg = (info) => ({
+  type: ADD_FLASH,
+  payload: info
+});
+
+export const dismissFlashMsg = () => ({
+  type: DISMISS_FLASH
+});
+
 export const signUpUser = (user) => (dispatch) => {
-    console.log(user);
     fetch(`${baseURL}/user/add`, {
         method: 'POST',
         body: JSON.stringify(user),
@@ -9,12 +18,19 @@ export const signUpUser = (user) => (dispatch) => {
             'Accept': 'application/json'
         }
     })
-        .then((response) => response.json())
-        .then((status) => {
-            console.log(status);
-            if (status === 'success') {
-                //TODO:show success to user
-                return;
-            }
-        });
-    };
+    .then((response) => response.json())
+    .then((response) => {
+          console.log(status);
+        if (response.status === 'success') {
+          dispatch(assignFlashMsg({
+            text: 'You sign up successfully. Now you can login',
+            type: 'success'
+          }))
+        } else if (response.status === 'email exists') {
+          dispatch(assignFlashMsg({
+            text: 'User with this email already exists',
+            type: 'danger'
+          }))
+        }
+    });
+};

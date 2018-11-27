@@ -48,8 +48,10 @@ class CourseManage extends Component {
 	}
 	return (
 	  <div className="course__manage">
-		<i onClick={() => this.toggleComplete(course_id, course_cat)} className={`icon-ok-circled ${this.state.complete ? 'active': ''}`}/>
-		<i onClick={() => this.toggleWish(course_id, course_cat)} className={`icon-plus-circle ${this.state.wish ? 'active': ''}`}/>
+		<i onClick={() => this.toggleComplete(course_id, course_cat)}
+		   className={`icon-ok-circled ${this.state.complete ? 'active': ''}`}/>
+		<i onClick={() => this.toggleWish(course_id, course_cat)}
+		   className={`icon-plus-circle ${this.state.wish ? 'active': ''}`}/>
 	  </div>
 	);
   }

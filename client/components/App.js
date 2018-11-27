@@ -9,11 +9,13 @@ import Signup from "./Forms/Signup";
 import RestorePassword from "./Forms/RestorePassword";
 import Profile from './Profile/Profile';
 import CatalogByCategory from "./CatalogContent/CatalogByCategory";
+import FlashMessage from "./Flash/Flash";
 
 class App extends Component {
     render() {
         return (
             <div>
+			    <FlashMessage/>
                 <Header/>
                 <Switch>
                     <Route exact path='/' component={Landing}/>

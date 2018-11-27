@@ -1,1 +1,3 @@
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const ADD_FLASH = 'ADD_FLASH';
+export const DISMISS_FLASH = 'DISMISS_FLASH';

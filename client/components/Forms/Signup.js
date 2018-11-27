@@ -59,20 +59,21 @@ class Signup extends Component {
                 password: this.state.password1,
             };
             this.props.signUpUser(user);
-            this.setState({
-                email: '',
-                first_name: '',
-                last_name: '',
-                password1: '',
-                password2: '',
-                isValidEmail: false,
-                isComplexPassword: false,
-                isPasswordMatch: false
-            });
-            alert('Signing up...');
-        } else {
-            alert ('Please input all data');
+            // this.setState({
+            //     email: '',
+            //     first_name: '',
+            //     last_name: '',
+            //     password1: '',
+            //     password2: '',
+            //     isValidEmail: false,
+            //     isComplexPassword: false,
+            //     isPasswordMatch: false
+            // });
+            //TODO:change to login form
         }
+        // else {
+        //     alert ('Please input all data');
+        // }
     }
 
     render() {

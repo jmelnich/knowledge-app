@@ -1,0 +1,32 @@
+.flash-message {
+  z-index: 3;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 0.4em;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.success {
+  color: #05250d;
+  background-color: #b4edc4;
+  border: 1px solid #74c083;
+}
+
+.danger {
+  color: #4c0000;
+  background-color: #edabb2;
+  border: 1px solid #ed7275;
+}
