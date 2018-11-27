@@ -1,4 +1,4 @@
-#SQLite 
+# SQLite 
 
 This project contains developer's test db under the name knowledge.
 
