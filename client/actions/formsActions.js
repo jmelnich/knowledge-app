@@ -20,7 +20,6 @@ export const signUpUser = (user) => (dispatch) => {
     })
     .then((response) => response.json())
     .then((response) => {
-          console.log(status);
         if (response.status === 'success') {
           dispatch(assignFlashMsg({
             text: 'You sign up successfully. Now you can login',
@@ -33,4 +32,19 @@ export const signUpUser = (user) => (dispatch) => {
           }))
         }
     });
+};
+
+export const loginUser = (user) => (dispatch) => {
+	fetch(`${baseURL}/user/auth`, {
+		method: 'POST',
+		body: JSON.stringify(user),
+		headers: {"Content-Type": "application/json",
+			'Accept': 'application/json'
+		}
+	})
+    .then((response) => response.json())
+    .then((response) => {
+        console.log(response.status);
+    });
+
 };

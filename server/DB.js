@@ -45,6 +45,10 @@ db.fetchAll = (sql, params = []) => {
     });
 };
 
-db.create = (table, columns, values)=> {
+db.create = (table, columns, values) => {
     return db.run(`INSERT INTO ${table} (${columns}) VALUES (${'?, '.repeat(values.length - 1) + '?'})`, values);
+};
+
+db.getByUnique = (table, column, value) => {
+	return db.fetch(`SELECT * FROM ${table} WHERE ${column} = ?`, [value]);
 };

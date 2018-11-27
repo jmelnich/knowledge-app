@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Email from './Inputs/Email'
 import {isValidEmail} from './Inputs/formValidator'
 import Password from "./Inputs/Password";
+import {loginUser} from '../../actions/formsActions';
+import {connect} from 'react-redux';
 
 class Login extends Component {
     constructor(props) {
@@ -29,18 +31,16 @@ class Login extends Component {
         })
     };
 
-    handleSubmit() {
-        const {isValidEmail} = this.state;
+    handleSubmit(e) {
+        e.preventDefault();
+        const {isValidEmail, email, password} = this.state;
         if (isValidEmail === true) {
-            //TODO: send email and password to back end, receive answer and based on that login user or show
-            this.setState({
-                email: '',
-                password: '',
-                isValidEmail: false
-            });
-            alert('Logging in...');
-        } else {
-            alert ('Login and password incorrect');
+            this.props.loginUser({email, password});
+            // this.setState({
+            //     email: '',
+            //     password: '',
+            //     isValidEmail: false
+            // });
         }
     }
 
@@ -67,6 +67,12 @@ class Login extends Component {
             </div>
         );
     }
+};
+
+function mapDispatchToProps(dispatch) {
+	return {
+		loginUser: (data) => dispatch(loginUser(data))
+	}
 }
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

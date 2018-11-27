@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Email from '../Forms/Inputs/Email';
 import Name from '../Forms/Inputs/Text';
-import Message from '../Forms/Inputs/TextArea'
-import {isValidEmail, isFilled} from '../Forms/Inputs/formValidator'
+import Message from '../Forms/Inputs/TextArea';
+import {isValidEmail, isFilled} from '../Forms/Inputs/formValidator';
 
 class LandingContactsForm extends Component {
     constructor(props) {
@@ -59,7 +59,8 @@ class LandingContactsForm extends Component {
         })
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         alert('Your message has been sent! We will contact you back within 7 days');
         //TODO: send message from user to admin email
         this.setState({
