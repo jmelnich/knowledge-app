@@ -6,6 +6,16 @@ import App from './components/App';
 import {BrowserRouter, Route} from 'react-router-dom';
 import store from './store';
 import {Provider} from 'react-redux';
+import {getCookie} from './utils/cookie';
+import jwt from 'jsonwebtoken';
+import {setCurrentUser} from './actions/formsActions';
+
+
+
+const token = getCookie('jwttoken');
+if (token) {
+  store.dispatch(setCurrentUser(jwt.decode(token)));
+}
 
 const app = () => {
     render(

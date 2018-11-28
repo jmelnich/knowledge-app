@@ -110,7 +110,7 @@ class Signup extends Component {
                                       password={this.state.password2}/>
                         </fieldset>
                         <button type="submit" onClick={this.handleSubmit}>Sign up</button>
-                        <p>Have account? <a href="#loginForm"> Log in</a></p>
+                        <p>Have account? <a href="#loginForm">Log in</a></p>
                     </form>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import bcrypt from 'bcryptjs';
 import {db} from '../../DB';
+import jwt from 'jsonwebtoken';
+import config from '../../config'
 
 module.exports = (request, result) => {
 	let {email, password} = request.body;
@@ -7,13 +9,22 @@ module.exports = (request, result) => {
 	promise
 	.then((response) => {
 		if (response === undefined) {
-			result.send({status: 'No user'});
+			result.send({status: 'no user'});
 		} else if (response.password) {
 			bcrypt.compare(password, response.password, function(err, res) {
-			console.log('bc res', res);
-				res ? result.send({status: 'OK'}) : result.send({status: 'wrong password'});
+				if (!res) {
+				  result.send({status: 'wrong password'});
+				} else {
+				  const token = jwt.sign({
+						id: response.id,
+					email: response.email,
+					first_name: response.first_name,
+					last_name: response.last_name
+				  }, config.jwtSecret);
+				  result.send({token});
+				}
 			});
 		}
 	})
-	//.catch((e) => response.send(e));
+	.catch((e) => result.send(e));
 };

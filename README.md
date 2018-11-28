@@ -1,4 +1,26 @@
-# Webpack 4 Boilerplate
+# Knowledge Register System
+
+
+## Overview
+The goal of this project is to gather all available courses from different educational platforms
+and give an opportunity to manage all courses in one place.
+The app is divided into 2 parts: public and private which is accessible only when the user is authorized.
+
+As a part of public access, users can browse and search course by its name.
+The user can filter courses by:
+* platform
+* category
+* duration
+ 
+Once logged in, the user have ability to shelve courses according to their status:
+* courses that currently in progress
+* wish list
+* completed courses
+
+Based on the user's completed, his/her expterize in a certain field is calculated. 
+
+
+## Deployment
 
 ## Requirements
 You only need node.js pre-installed and you’re good to go.

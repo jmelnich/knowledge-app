@@ -2,7 +2,7 @@ import {SET_CURRENT_USER} from "../actions/types";
 
 const initialState = {
     auth: false,
-    user: {}
+    details: {}
 };
 
 export default function (state = initialState, action) {
@@ -10,7 +10,7 @@ export default function (state = initialState, action) {
         case SET_CURRENT_USER:
             return Object.assign({}, state, {
                 auth: true,
-                user: action.payload
+                details: action.payload
             });
         default:
             return state;

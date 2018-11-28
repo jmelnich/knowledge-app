@@ -1,5 +1,7 @@
 import {ADD_FLASH, DISMISS_FLASH, SET_CURRENT_USER} from './types';
 import {baseURL} from "../config";
+import jwt from 'jsonwebtoken';
+import {setCookie} from '../utils/cookie';
 
 const assignFlashMsg = (info) => ({
   type: ADD_FLASH,
@@ -34,6 +36,11 @@ export const signUpUser = (user) => (dispatch) => {
     });
 };
 
+export const setCurrentUser = (details) => ({
+  type: SET_CURRENT_USER,
+  payload: details
+});
+
 export const loginUser = (user) => (dispatch) => {
 	fetch(`${baseURL}/user/auth`, {
 		method: 'POST',
@@ -44,7 +51,22 @@ export const loginUser = (user) => (dispatch) => {
 	})
     .then((response) => response.json())
     .then((response) => {
-        console.log(response.status);
+        if (response.status === 'no user') {
+		  dispatch(assignFlashMsg({
+			text: 'User with this email does not exist',
+			type: 'danger'
+		  }))
+		} else if (response.status === "wrong password") {
+		  dispatch(assignFlashMsg({
+			text: 'Email and password do not match',
+			type: 'danger'
+		  }))
+		} else if (response.token) {
+          const token = response.token;
+		  setCookie('jwttoken', token,  2);
+		  dispatch(setCurrentUser(jwt.decode(token)));
+		}
     });
-
 };
+
+

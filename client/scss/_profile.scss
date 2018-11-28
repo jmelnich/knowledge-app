@@ -40,5 +40,10 @@
     margin-top: 1em;
     padding: 1em 1em 0 0;
     width: 450px;
+    p {
+      font-family: $OpenSans-Regular;
+      font-size: 1em;
+      padding: 10px 0;
+    }
   }
 }
