@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Email from './Inputs/Email';
 import Password from "./Inputs/Password";
 import {isValidEmail, isComplexPassword, isPasswordMatch} from './Inputs/formValidator';
-import {signUpUser} from '../../actions/formsActions';
+import {signUpUser} from '../../actions/userActions';
 import {connect} from "react-redux";
+import {toggleLogin, toggleSignUp} from "../../actions/formToggleActions";
 
 class Signup extends Component {
     constructor(props) {
@@ -20,6 +21,8 @@ class Signup extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+	    this.toggleLogin = this.toggleLogin.bind(this);
+	    this.toggleSignUp = this.toggleSignUp.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -48,6 +51,13 @@ class Signup extends Component {
         })
     };
 
+	toggleLogin() {
+		this.props.toggleLogin();
+	};
+	toggleSignUp() {
+		this.props.toggleSignUp();
+	};
+
     handleSubmit(e) {
         e.preventDefault();
         const {isValidEmail, isComplexPassword, isPasswordMatch} = this.state;
@@ -58,7 +68,9 @@ class Signup extends Component {
                 last_name: this.state.last_name,
                 password: this.state.password1,
             };
-            this.props.signUpUser(user);
+            this.props.signUpUser(user)
+                .then(console.log(this.props));
+
             // this.setState({
             //     email: '',
             //     first_name: '',
@@ -70,6 +82,8 @@ class Signup extends Component {
             //     isPasswordMatch: false
             // });
             //TODO:change to login form
+
+
         }
         // else {
         //     alert ('Please input all data');
@@ -77,10 +91,11 @@ class Signup extends Component {
     }
 
     render() {
+
         return (
-            <div id="signUpForm">
+            <div id="signUpForm" style={{display: this.props.form ? 'block' : 'none'}}>
                 <div className="modal">
-                    <a href="#" className="modal__close">X</a>
+                    <a href="#" className="modal__close" onClick={this.toggleSignUp}>X</a>
                     <form className="flex-col">
                         <fieldset className="flex-col">
                             <legend>Sign up</legend>
@@ -99,6 +114,7 @@ class Signup extends Component {
                                    value={this.state.last_name}
                                    onChange={this.handleChange}
                             />
+
                             <Password handleChange={this.handleChange}
                                       name="password1"
                                       message={this.state.isComplexPassword}
@@ -110,7 +126,7 @@ class Signup extends Component {
                                       password={this.state.password2}/>
                         </fieldset>
                         <button type="submit" onClick={this.handleSubmit}>Sign up</button>
-                        <p>Have account? <a href="#loginForm">Log in</a></p>
+                        <p>Have account? <a href="#loginForm" onClick={this.toggleLogin}>Log in</a></p>
                     </form>
                 </div>
             </div>
@@ -118,4 +134,17 @@ class Signup extends Component {
     }
 }
 
-export default connect(null, {signUpUser})(Signup);
+function mapStateToProps({form}) {
+    return {form: form.signup}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		signUpUser: (user) => dispatch(signUpUser(user)),
+		toggleLogin: () => dispatch(toggleLogin()),
+		toggleSignUp: () => dispatch(toggleSignUp())
+	}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {dismissFlashMsg} from '../../actions/formsActions';
+import {dismissFlashMsg} from '../../actions/userActions';
 
 class Flash extends Component {
   constructor(props) {

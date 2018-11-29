@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Email from './Inputs/Email'
 import {isValidEmail} from './Inputs/formValidator'
 import Password from "./Inputs/Password";
-import {loginUser} from '../../actions/formsActions';
+import {loginUser} from '../../actions/userActions';
 import {connect} from 'react-redux';
+import {toggleLogin, toggleSignUp, toggleFpass} from "../../actions/formToggleActions";
 
 class Login extends Component {
     constructor(props) {
@@ -13,8 +14,12 @@ class Login extends Component {
             password: '',
             isValidEmail: false
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleLogin = this.toggleLogin.bind(this);
+        this.toggleSignUp = this.toggleSignUp.bind(this);
+        this.toggleFpass = this.toggleFpass.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -30,6 +35,17 @@ class Login extends Component {
             [event.target.name]: event.target.value
         })
     };
+	toggleLogin() {
+		this.props.toggleLogin();
+	};
+
+	toggleSignUp() {
+		this.props.toggleSignUp();
+	};
+
+	toggleFpass() {
+		this.props.toggleFpass();
+	};
 
     handleSubmit(e) {
         e.preventDefault();
@@ -46,9 +62,9 @@ class Login extends Component {
 
     render() {
         return (
-            <div id="loginForm">
+            <div id="loginForm" style={{display: this.props.form ? 'block' : 'none'}}>
                 <div className="modal">
-                    <a href="#" className="modal__close">X</a>
+                    <a href="#" className="modal__close" onClick={this.toggleLogin}>X</a>
                     <form className="flex-col">
                         <fieldset className="flex-col">
                             <legend>Log in</legend>
@@ -58,9 +74,9 @@ class Login extends Component {
                             <Password handleChange={this.handleChange}
                                     password={this.state.password}/>
                         </fieldset>
-                        <a href="#restorePasswordForm">Forgot your password?</a>
+                        <a href="#restorePasswordForm" onClick={this.toggleFpass}>Forgot your password?</a>
                         <button type="submit" onClick={this.handleSubmit}>Log in</button>
-                        <p>Don't have account? <a href="#signUpForm"> Sign up</a></p>
+                        <p>Don't have account? <a href="#signUpForm" onClick={this.toggleSignUp}> Sign up</a></p>
                     </form>
 
                 </div>
@@ -69,10 +85,17 @@ class Login extends Component {
     }
 };
 
+function mapStateToProps({form}) {
+    return {form: form.login}
+}
+
 function mapDispatchToProps(dispatch) {
 	return {
-		loginUser: (data) => dispatch(loginUser(data))
+		loginUser: (data) => dispatch(loginUser(data)),
+        toggleLogin: () => dispatch(toggleLogin()),
+        toggleSignUp: () => dispatch(toggleSignUp()),
+		toggleFpass: () => dispatch(toggleFpass())
 	}
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

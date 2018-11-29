@@ -1,3 +1,6 @@
+export const TOGGLE_LOGIN = 'TOGGLE_LOGIN';
+export const TOGGLE_SIGNUP = 'TOGGLE_SIGNUP';
+export const TOGGLE_FPASS = 'TOGGLE_FPASS';
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const ADD_FLASH = 'ADD_FLASH';
 export const DISMISS_FLASH = 'DISMISS_FLASH';

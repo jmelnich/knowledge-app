@@ -8,7 +8,7 @@ import store from './store';
 import {Provider} from 'react-redux';
 import {getCookie} from './utils/cookie';
 import jwt from 'jsonwebtoken';
-import {setCurrentUser} from './actions/formsActions';
+import {setCurrentUser} from './actions/userActions';
 
 
 

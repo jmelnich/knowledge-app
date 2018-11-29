@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
-import Email from './Inputs/Email'
-import {isValidEmail} from './Inputs/formValidator'
+import React, {Component} from 'react';
+import Email from './Inputs/Email';
+import {isValidEmail} from './Inputs/formValidator';
+import {toggleFpass, toggleLogin} from '../../actions/formToggleActions';
+import connect from "react-redux/es/connect/connect";
 
 class RestorePassword extends Component {
     constructor(props) {
@@ -12,6 +14,8 @@ class RestorePassword extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+	    this.toggleFpass = this.toggleFpass.bind(this);
+	    this.toggleLogin = this.toggleLogin.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -27,6 +31,14 @@ class RestorePassword extends Component {
             [event.target.name]: event.target.value
         })
     };
+
+	toggleFpass() {
+		this.props.toggleFpass();
+	};
+
+	toggleLogin() {
+		this.props.toggleLogin();
+	};
 
     handleSubmit() {
         const {isValidEmail} = this.state;
@@ -45,9 +57,9 @@ class RestorePassword extends Component {
 
     render() {
         return (
-            <div id="restorePasswordForm">
+            <div id="restorePasswordForm" style={{display: this.props.form ? 'block' : 'none'}}>
                 <div className="modal">
-                    <a href="#" className="modal__close">X</a>
+                    <a href="#" className="modal__close" onClick={this.toggleFpass}>X</a>
                     <form className="flex-col">
                         <fieldset className="flex-col">
                             <legend>Restore password</legend>
@@ -56,7 +68,7 @@ class RestorePassword extends Component {
                                    email={this.state.email}/>
                         </fieldset>
                         <button type="submit" onClick={this.handleSubmit}>Send</button>
-                        <a href="#loginForm">Back to login</a>
+                        <a href="#loginForm" onClick={this.toggleLogin}>Back to login</a>
                     </form>
 
                 </div>
@@ -65,4 +77,15 @@ class RestorePassword extends Component {
     }
 }
 
-export default RestorePassword;
+function mapStateToProps({form}) {
+	return {form: form.fpass}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		toggleFpass: () => dispatch(toggleFpass()),
+		toggleLogin: () => dispatch(toggleLogin())
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestorePassword);

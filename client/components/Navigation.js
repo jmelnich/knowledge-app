@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {baseURL} from '../config';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {toggleLogin} from "../actions/formToggleActions";
 
 const categories = ['general', 'non-tech', 'computer-science', 'ios', 'android', 'software-engineering',
     'web', 'data-science'];
@@ -12,11 +14,16 @@ class Navigation extends Component {
             isVisible: false
         };
         this.toggle = this.toggle.bind(this);
+        this.toggleForm = this.toggleForm.bind(this);
     }
 
     toggle() {
         this.setState({isVisible: !this.state.isVisible})
     };
+
+	toggleForm() {
+		this.props.toggleLogin();
+	};
 
 render() {
     const display = this.state.isVisible ? 'inline-block' : 'none';
@@ -40,10 +47,10 @@ render() {
                 </li>
                 <li><a href={`${baseURL}/#about`}>about us</a></li>
                 <li><a href={`${baseURL}/#contacts`}>contacts</a></li>
-                <li><a href="#loginForm">log in</a></li>
+                <li><a href="#loginForm" onClick={this.toggleForm}>log in</a></li>
             </ul>
         </nav>
     );
   }
 }
-export default Navigation;
+export default connect(null, {toggleLogin})(Navigation);
