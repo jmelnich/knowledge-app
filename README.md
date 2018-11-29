@@ -1,4 +1,5 @@
 # Knowledge Register System
+![welcome](img_readme/landing_slider.jpg)
 
 
 ## Overview
@@ -6,12 +7,16 @@ The goal of this project is to gather all available courses from different educa
 and give an opportunity to manage all courses in one place.
 The app is divided into 2 parts: public and private which is accessible only when the user is authorized.
 
+![signup](img_readme/landing.jpg)
+
 As a part of public access, users can browse and search course by its name.
 The user can filter courses by:
 * platform
 * category
 * duration
  
+![filters](img_readme/browse.jpg)
+
 Once logged in, the user have ability to shelve courses according to their status:
 * courses that currently in progress
 * wish list
