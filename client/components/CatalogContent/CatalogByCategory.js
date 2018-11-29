@@ -23,7 +23,7 @@ render() {
         let currentCategory = '';
         switch (this.state.category) {
             case "general":
-                currentCategory = 'general';
+                currentCategory = 'General';
                 break;
             case "computer-science":
                 currentCategory = 'Georgia Tech Masters in CS';
@@ -47,12 +47,12 @@ render() {
                 currentCategory = "Data Science";
                 break;
             default:
-                currentCategory = "";
+                currentCategory = "General";
 
         }
     let courses = udacity.courses;
     courses = courses.filter(course => {
-        if (course.tracks.length === 0 && currentCategory === "general") {
+        if (course.tracks.length === 0 && currentCategory === "General") {
             return true;
         } else if (course.tracks[0] === currentCategory || course.tracks[1] === currentCategory) {
             return true;
@@ -60,11 +60,21 @@ render() {
     });
 
     return (
-        <div className="flex-row courses-block">
-            {courses.map(item => (
-                <CourseItem key={item.key} course={item}/>
-            ))}
-        </div>
+	    <main>
+		    <section id="catalog">
+			    <div className="wrapper">
+				    <div className="section-content">
+					    <h2>{currentCategory}</h2>
+                        <div className="flex-row courses-block">
+                            {courses.map(item => (
+                                <CourseItem key={item.key} course={item}/>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
     );
   }
 }

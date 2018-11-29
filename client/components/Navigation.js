@@ -30,8 +30,7 @@ render() {
     const dropStyle = {
            display: display
     };
-
-
+    const {auth, details} = this.props;
     return (
         <nav id="nav">
             <ul className="flex-row main-nav">
@@ -47,10 +46,18 @@ render() {
                 </li>
                 <li><a href={`${baseURL}/#about`}>about us</a></li>
                 <li><a href={`${baseURL}/#contacts`}>contacts</a></li>
-                <li><a href="#loginForm" onClick={this.toggleForm}>log in</a></li>
+                <li>
+                    {auth ? <Link to='/profile'>{details.email}</Link> :
+                    <a href="#loginForm" onClick={this.toggleForm}>log in</a>}
+                </li>
             </ul>
         </nav>
     );
   }
 }
-export default connect(null, {toggleLogin})(Navigation);
+
+function mapStateToProps({user}) {
+	return user;
+}
+
+export default connect(mapStateToProps, {toggleLogin})(Navigation);

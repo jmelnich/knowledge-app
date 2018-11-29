@@ -13,6 +13,7 @@ As a part of public access, users can browse and search course by its name.
 The user can filter courses by:
 * platform
 * category
+* level
 * duration
  
 ![filters](img_readme/browse.jpg)

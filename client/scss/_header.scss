@@ -53,6 +53,10 @@ header {
             color: $lighter-accent;
           }
         }
+        [href*='profile'] {
+          text-transform: lowercase;
+          color: #7cda9a;
+        }
         &:first-child {
           &:after {
             content: "\25bc";
@@ -66,6 +70,7 @@ header {
             }
           }
         }
+
       }
     }
   }
@@ -83,7 +88,19 @@ li.drop-down {
     font-size: 1.1em;
     text-transform: capitalize;
     li {
-      padding: 0.9em 0.3em;
+      padding: 0.2em 0.3em;
+      a {
+        width: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+      }
+      &:last-child {
+        text-transform: uppercase;
+        font-family: $OpenSans-Bold;
+        a {
+          color: $lighter-accent;
+        }
+      }
     }
   }
 }
@@ -98,6 +115,7 @@ li.drop-down {
   /* hide nav, show burger */
   #nav {
     display: none;
+    z-index: 1;
   }
   .toggle-menu {
     display: block;
