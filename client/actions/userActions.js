@@ -3,7 +3,7 @@ import {baseURL} from "../config";
 import jwt from 'jsonwebtoken';
 import {setCookie} from '../utils/cookie';
 
-const assignFlashMsg = (info) => ({
+export const assignFlashMsg = (info) => ({
   type: ADD_FLASH,
   payload: info
 });
@@ -42,7 +42,7 @@ export const setCurrentUser = (details) => ({
 });
 
 export const loginUser = (user) => (dispatch) => {
-	fetch(`${baseURL}/user/auth`, {
+	return fetch(`${baseURL}/user/auth`, {
 		method: 'POST',
 		body: JSON.stringify(user),
 		headers: {"Content-Type": "application/json",
@@ -55,18 +55,23 @@ export const loginUser = (user) => (dispatch) => {
 		  dispatch(assignFlashMsg({
 			text: 'User with this email does not exist',
 			type: 'danger'
-		  }))
+		  }));
+		  return response.status;
 		} else if (response.status === "wrong password") {
 		  dispatch(assignFlashMsg({
 			text: 'Email and password do not match',
 			type: 'danger'
-		  }))
+		  }));
+		  return response.status;
 		} else if (response.token) {
           const token = response.token;
 		  setCookie('jwttoken', token,  2);
 		  dispatch(setCurrentUser(jwt.decode(token)));
+	        return 'ok';
 		}
-    });
+    })
+	.then((status) => status);
+
 };
 
 

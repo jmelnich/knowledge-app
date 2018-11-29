@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Email from './Inputs/Email';
 import Password from "./Inputs/Password";
 import {isValidEmail, isComplexPassword, isPasswordMatch} from './Inputs/formValidator';
-import {signUpUser} from '../../actions/userActions';
+import {signUpUser, assignFlashMsg} from '../../actions/userActions';
 import {connect} from "react-redux";
 import {toggleLogin, toggleSignUp} from "../../actions/formToggleActions";
 
@@ -68,26 +68,24 @@ class Signup extends Component {
                 last_name: this.state.last_name,
                 password: this.state.password1,
             };
-            this.props.signUpUser(user)
-                .then(console.log(this.props));
-
-            // this.setState({
-            //     email: '',
-            //     first_name: '',
-            //     last_name: '',
-            //     password1: '',
-            //     password2: '',
-            //     isValidEmail: false,
-            //     isComplexPassword: false,
-            //     isPasswordMatch: false
-            // });
-            //TODO:change to login form
-
-
+            this.props.signUpUser(user);
+            this.setState({
+                email: '',
+                first_name: '',
+                last_name: '',
+                password1: '',
+                password2: '',
+                isValidEmail: false,
+                isComplexPassword: false,
+                isPasswordMatch: false
+            });
+            this.toggleSignUp();
+        } else {
+            this.props.assignFlashMsg({
+	            text: 'Please fill all required fields',
+	            type: 'danger'
+            })
         }
-        // else {
-        //     alert ('Please input all data');
-        // }
     }
 
     render() {
@@ -142,7 +140,8 @@ function mapDispatchToProps(dispatch) {
 	return {
 		signUpUser: (user) => dispatch(signUpUser(user)),
 		toggleLogin: () => dispatch(toggleLogin()),
-		toggleSignUp: () => dispatch(toggleSignUp())
+		toggleSignUp: () => dispatch(toggleSignUp()),
+		assignFlashMsg: (info) => dispatch(assignFlashMsg(info))
 	}
 }
 

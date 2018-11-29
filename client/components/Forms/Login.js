@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Email from './Inputs/Email'
 import {isValidEmail} from './Inputs/formValidator'
 import Password from "./Inputs/Password";
-import {loginUser} from '../../actions/userActions';
+import {assignFlashMsg, loginUser} from '../../actions/userActions';
 import {connect} from 'react-redux';
 import {toggleLogin, toggleSignUp, toggleFpass} from "../../actions/formToggleActions";
+import {withRouter} from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -51,12 +52,24 @@ class Login extends Component {
         e.preventDefault();
         const {isValidEmail, email, password} = this.state;
         if (isValidEmail === true) {
-            this.props.loginUser({email, password});
-            // this.setState({
-            //     email: '',
-            //     password: '',
-            //     isValidEmail: false
-            // });
+            this.props.loginUser({email, password})
+	            .then((status) => {
+	                if (status === 'ok') {
+	                    this.setState({
+		                    email: '',
+		                    password: '',
+		                    isValidEmail: false
+                        });
+	                    this.toggleLogin();
+	                    this.props.history.push('/profile');
+                    }
+                });
+
+        } else {
+	        this.props.assignFlashMsg({
+		        text: 'Please input correct credentials',
+		        type: 'danger'
+            })
         }
     }
 
@@ -94,8 +107,9 @@ function mapDispatchToProps(dispatch) {
 		loginUser: (data) => dispatch(loginUser(data)),
         toggleLogin: () => dispatch(toggleLogin()),
         toggleSignUp: () => dispatch(toggleSignUp()),
-		toggleFpass: () => dispatch(toggleFpass())
+		toggleFpass: () => dispatch(toggleFpass()),
+		assignFlashMsg: (info) => dispatch(assignFlashMsg(info))
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

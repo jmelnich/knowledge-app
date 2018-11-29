@@ -10,9 +10,11 @@ import RestorePassword from "./Forms/RestorePassword";
 import Profile from './Profile/Profile';
 import CatalogByCategory from "./CatalogContent/CatalogByCategory";
 import FlashMessage from "./Flash/Flash";
+import {connect} from "react-redux";
 
 class App extends Component {
     render() {
+        console.log(this.props.auth); //TODO: provide profile only if auth true
         return (
             <div>
 			    <FlashMessage/>
@@ -30,4 +32,9 @@ class App extends Component {
             </div>
         )}
 }
-export default App;
+
+function mapStateToProps({user}) {
+	return user;
+}
+
+export default connect(mapStateToProps)(App);

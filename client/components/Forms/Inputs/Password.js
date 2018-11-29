@@ -4,7 +4,7 @@ const Password = (props) => {
     const {password, name, handleChange, label, message} = props;
     return (
         <div>
-            <label>{label || 'Password'}</label>
+            <label>{label || 'Password*'}</label>
             <input type="password"
                    name={name || 'password'}
                    autoComplete="on"
