@@ -1,7 +1,8 @@
 import React from 'react';
 import udacity from '../../img/affiliates/u-affiliate.png';
 import uBg from '../../img/udacity-default.png';
-import CourseManage from './CourseManage'
+import CourseManage from './CourseManage';
+import {connect} from 'react-redux';
 
 const CourseItem = (props) => {
     const {course} = props;
@@ -37,10 +38,14 @@ const CourseItem = (props) => {
                     <i className="icon-clock"/>
                     <span>{course.expected_duration}{" "}{course.expected_duration_unit}</span>
                 </div>
-			    <CourseManage course={course}/>
+                {props.auth ? <CourseManage course={course}/> : ''}
             </footer>
         </article>
     );
 };
 
-export default CourseItem;
+function mapStateToProps({user}) {
+	return user;
+}
+
+export default connect(mapStateToProps)(CourseItem);

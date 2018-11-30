@@ -36,7 +36,7 @@ class CourseManage extends Component {
   //compare key course to array from ls
 
   render() {
-    console.log('all props', this.props);
+    //console.log('all props', this.props);
     const course_id = this.props.course.key;
     const course_cat = this.props.course.tracks;
     if (this.props.auth) {

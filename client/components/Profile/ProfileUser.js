@@ -4,7 +4,6 @@ import Graph from './Graph';
 import {connect} from 'react-redux';
 
 const User = (props) => {
-    console.log(props);
     return (
         <div className="wrapper-fixed">
             <div className="section-content">

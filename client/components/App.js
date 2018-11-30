@@ -24,6 +24,9 @@ class App extends Component {
                     <Route path='/catalog/:category' component={CatalogByCategory}/>
                     <Route path='/catalog' component={Catalog}/>
                     <Route path='/profile' component={Profile}/>
+                    <Route path='/progress' component={Profile}/>
+                    <Route path='/wish' component={Profile}/>
+                    <Route path='/archive' component={Profile}/>
                 </Switch>
                 <Login/>
                 <Signup/>
