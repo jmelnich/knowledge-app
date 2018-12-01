@@ -3,6 +3,12 @@ import {baseURL} from "../config";
 import jwt from 'jsonwebtoken';
 import {setCookie} from '../utils/cookie';
 
+const header = {
+    "Content-Type": "application/json",
+    'Accept': 'application/json'
+};
+
+
 export const assignFlashMsg = (info) => ({
   type: ADD_FLASH,
   payload: info
@@ -16,9 +22,7 @@ export const signUpUser = (user) => (dispatch) => {
     fetch(`${baseURL}/user/add`, {
         method: 'POST',
         body: JSON.stringify(user),
-        headers: {"Content-Type": "application/json",
-            'Accept': 'application/json'
-        }
+        headers: header
     })
     .then((response) => response.json())
     .then((response) => {
@@ -45,9 +49,7 @@ export const loginUser = (user) => (dispatch) => {
 	return fetch(`${baseURL}/user/auth`, {
 		method: 'POST',
 		body: JSON.stringify(user),
-		headers: {"Content-Type": "application/json",
-			'Accept': 'application/json'
-		}
+		headers: header
 	})
     .then((response) => response.json())
     .then((response) => {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {updateCourse} from "../../actions/courseActions";
 
 class CourseManage extends Component {
   constructor(props) {
@@ -17,8 +18,15 @@ class CourseManage extends Component {
    * @param {array} category - Course category
    */
   toggleComplete(id, category) {
+  	const status = !this.state.complete ? 2 : 0;
     this.setState({complete: !this.state.complete});
-    console.log(id, category);
+    const course = {
+    	user_id: this.props.details.id,
+		course_id: id,
+		category: category[0],
+		status
+	};
+    updateCourse(course);
   }
 
   /**
@@ -27,7 +35,15 @@ class CourseManage extends Component {
    */
   toggleWish(id, category) {
 	this.setState({wish: !this.state.wish});
-	console.log(id, category);
+      const status = !this.state.complete ? 1 : 0;
+      this.setState({complete: !this.state.complete});
+      const course = {
+          user_id: this.props.details.id,
+          course_id: id,
+          category: category[0],
+          status
+      };
+      updateCourse(course);
   }
 
   //save to ls
@@ -36,15 +52,12 @@ class CourseManage extends Component {
   //compare key course to array from ls
 
   render() {
+
     //console.log('all props', this.props);
     const course_id = this.props.course.key;
     const course_cat = this.props.course.tracks;
     if (this.props.auth) {
       //get from DB
-      //save to DB
-	} else {
-      //get from LS
-      //save to LS
 	}
 	return (
 	  <div className="course__manage">

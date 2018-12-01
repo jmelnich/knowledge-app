@@ -5,6 +5,7 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackConfig from '../webpack.config';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import user from './routes/user';
+import course from './routes/course';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 
 /* Define routes */
 app.use('/user/', user);
+app.use('/course/', course);
 
 /* This is for ensuring access to files */
 app.use(express.static(path.join(__dirname, "/public")));

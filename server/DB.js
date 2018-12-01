@@ -52,3 +52,11 @@ db.create = (table, columns, values) => {
 db.getByUnique = (table, column, value) => {
 	return db.fetch(`SELECT * FROM ${table} WHERE ${column} = ?`, [value]);
 };
+
+db.getAllByUnique = (table, column, value) => {
+  return db.fetchAll(`SELECT * FROM ${table} WHERE ${column} = ?`, [value]);
+};
+
+db.updateMultipleConditions = (table, column, valueCol, key, valKey, key2, valKey2) => {
+    return db.run(`UPDATE ${table} SET ${column} = ? WHERE ${key} = ? AND ${key2} = ?`, [valueCol, valKey, valKey2]);
+};
