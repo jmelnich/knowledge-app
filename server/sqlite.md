@@ -5,7 +5,10 @@ This project contains developer's test db under the name knowledge.
 ## Dependencies
 sqlite3
 
-Run 
+*Reinitialize db*
+<code>sqlite3 knowledge < sqlite.sql</code>
+
+*Run*
 <code>sqlite3 knowledge</code>
 from the terminal
 
