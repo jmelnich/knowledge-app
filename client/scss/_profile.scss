@@ -3,7 +3,7 @@
 #profile {
   display: flex;
   nav {
-    width: 250px;
+    min-width: 250px;
     background-color: $dark-bg;
     color: white;
     font-family: $OpenSans-Light;

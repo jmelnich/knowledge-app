@@ -5,6 +5,7 @@ import LandingAbout from './LandingAbout';
 import LandingBegin from './LandingBegin';
 import LandingPartners from './LandingPartners';
 import LandingContacts from './LandingContacts';
+import LandingGallery from "./LandingGallery";
 
 const Landing = () => {
     return (
@@ -16,6 +17,7 @@ const Landing = () => {
                 <LandingBegin/>
                 <LandingPartners/>
                 <LandingContacts/>
+                <LandingGallery/>
             </main>
         </div>
     )
