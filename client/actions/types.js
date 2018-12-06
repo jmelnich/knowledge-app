@@ -5,3 +5,4 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const ADD_FLASH = 'ADD_FLASH';
 export const DISMISS_FLASH = 'DISMISS_FLASH';
 export const UPDATE_COURSE = 'UPDATE_COURSE';
+export const SET_USER_COURSES = 'SET_USER_COURSES';

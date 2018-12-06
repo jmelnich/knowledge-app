@@ -74,7 +74,6 @@ render() {
                 </div>
             </section>
         </main>
-
     );
   }
 }

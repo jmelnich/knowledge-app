@@ -1,27 +1,43 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {updateCourse} from "../../actions/courseActions";
+import courses from "../../reducers/courses";
 
 class CourseManage extends Component {
   constructor(props) {
     super(props);
 	this.state = {
-	  wish: false,
-	  complete: false
+	    wish: [],
+        completed: [],
+        isWish: false,
+        isCompleted: false
 	};
 	this.toggleComplete = this.toggleComplete.bind(this);
 	this.toggleWish = this.toggleWish.bind(this);
   }
+    componentDidUpdate(prevProps, prevState) {
+      if (prevProps.courses.completed.length !== this.props.courses.completed.length ||
+        prevProps.courses.wish.length !== this.props.courses.wish.length) {
+        const course_id = this.props.course.key;
+          this.setState({
+              wish: this.props.courses.wish,
+              completed: this.props.courses.completed,
+              isWish: this.props.courses.wish.filter(course => course_id === course.course_id).length,
+              isCompleted: this.props.courses.completed.filter(course => course_id === course.course_id).length
+          });
+      }
+    }
 
   /**
    * @param {string} id - Course id
    * @param {array} category - Course category
    */
   toggleComplete(id, category) {
-  	const status = !this.state.complete ? 2 : 0;
-    this.setState({complete: !this.state.complete});
+  	const status = !this.state.isCompleted ? 2 : 0;
+    this.setState({isCompleted: !this.state.isCompleted,
+                    isWish: false});
     const course = {
-    	user_id: this.props.details.id,
+    	user_id: this.props.user.details.id,
 		course_id: id,
 		category: category[0],
 		status
@@ -34,11 +50,11 @@ class CourseManage extends Component {
    * @param {array} category - Course category
    */
   toggleWish(id, category) {
-	this.setState({wish: !this.state.wish});
-      const status = !this.state.complete ? 1 : 0;
-      this.setState({complete: !this.state.complete});
+      const status = !this.state.isWish ? 1 : 0;
+      this.setState({isWish: !this.state.isWish,
+                    isCompleted: false});
       const course = {
-          user_id: this.props.details.id,
+          user_id: this.props.user.details.id,
           course_id: id,
           category: category[0],
           status
@@ -52,26 +68,23 @@ class CourseManage extends Component {
   //compare key course to array from ls
 
   render() {
-
-    //console.log('all props', this.props);
     const course_id = this.props.course.key;
     const course_cat = this.props.course.tracks;
-    if (this.props.auth) {
-      //get from DB
-	}
 	return (
 	  <div className="course__manage">
 		<i onClick={() => this.toggleComplete(course_id, course_cat)}
-		   className={`icon-ok-circled ${this.state.complete ? 'active': ''}`}/>
+		   className={`icon-ok-circled ${this.state.isCompleted ? 'active': ''}`}/>
 		<i onClick={() => this.toggleWish(course_id, course_cat)}
-		   className={`icon-plus-circle ${this.state.wish ? 'active': ''}`}/>
+		   className={`icon-plus-circle ${this.state.isWish ? 'active': ''}`}/>
 	  </div>
 	);
   }
 }
 
-function mapStateToProps({user}) {
-  return user;
+function mapStateToProps({user, courses}) {
+  return {user,
+        courses
+  }
 }
 
 export default connect(mapStateToProps, null)(CourseManage);

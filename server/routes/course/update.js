@@ -19,7 +19,6 @@ module.exports = (request, result) => {
           const columns = Object.keys(data).join(', '),
                 values  = Object.values(data),
                 promise = db.create('courses', columns, values);
-          console.log('cols', columns);
                 promise.then((resolve, reject) => {
               result.send({status: 'add ok'});
           })
