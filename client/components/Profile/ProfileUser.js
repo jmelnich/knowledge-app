@@ -21,14 +21,14 @@ const User = (props) => {
 	                    <div className="user-details__skills">
 	                        <h3>My Skills</h3>
                             <div className="flex-col">
-                            <label>HTML</label>
-		                    <progress value="44" max="100"/>
-                            <label>CSS</label>
-		                    <progress value="54" max="100"/>
-                            <label>JS</label>
-		                    <progress value="54" max="100"/>
-                            <label>SQL</label>
-		                    <progress value="54" max="100"/>
+                                <label>HTML</label>
+                                <progress value="44" max="100"/>
+                                <label>CSS</label>
+                                <progress value="54" max="100"/>
+                                <label>JS</label>
+                                <progress value="54" max="100"/>
+                                <label>SQL</label>
+                                <progress value="54" max="100"/>
 	                            <label>PHP</label>
 	                            <progress value="24" max="100"/>
                             </div>

@@ -2,7 +2,6 @@ import {db} from '../../DB';
 
 module.exports = (request, result) => {
     const {id}  = request.body;
-    console.log('id ***************************************************', id);
     const promise = db.getAllByUnique('courses', 'user_id', id);
     promise.then((resolve, reject) => {
         result.send({courses: resolve})

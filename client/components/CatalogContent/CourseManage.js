@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {updateCourse} from "../../actions/courseActions";
-import courses from "../../reducers/courses";
 
 class CourseManage extends Component {
   constructor(props) {
@@ -42,7 +41,7 @@ class CourseManage extends Component {
 		category: category[0],
 		status
 	};
-    updateCourse(course);
+    this.props.updateCourse(course);
   }
 
   /**
@@ -59,7 +58,7 @@ class CourseManage extends Component {
           category: category[0],
           status
       };
-      updateCourse(course);
+      this.props.updateCourse(course);
   }
 
   //save to ls
@@ -87,4 +86,10 @@ function mapStateToProps({user, courses}) {
   }
 }
 
-export default connect(mapStateToProps, null)(CourseManage);
+function mapDispatchToProps(dispatch) {
+    return {
+        updateCourse: (course) => dispatch(updateCourse(course))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseManage);

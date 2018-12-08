@@ -1,4 +1,4 @@
-import {SET_USER_COURSES} from "./types";
+import {SET_USER_COURSES, UPDATE_COURSE} from "./types";
 import {baseURL} from "../config";
 
 const header = {
@@ -6,7 +6,7 @@ const header = {
     'Accept': 'application/json'
 };
 
-export const updateCourse = (course) => {
+export const updateCourse = (course) => dispatch => {
     fetch(`${baseURL}/course/update`, {
         method: 'POST',
         body: JSON.stringify(course),
@@ -15,6 +15,10 @@ export const updateCourse = (course) => {
         .then((response) => response.json())
         .then((response) => {
             console.log('status for course on back', response);
+            dispatch({
+                type: UPDATE_COURSE,
+                payload: course
+            })
         })
 };
 
@@ -26,7 +30,6 @@ export const getUserCourses = (id) => (dispatch) => {
     })
         .then((response) => response.json())
         .then((response) => {
-            console.log('courses', response.courses);
             if (response.courses) {
                 dispatch({
                     type: SET_USER_COURSES,

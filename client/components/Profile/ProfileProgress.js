@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {connect} from 'react-redux';
 
 const Progress = (props) => {
     return (
@@ -8,6 +9,10 @@ const Progress = (props) => {
             </div>
         </div>
     );
+};
+
+function mapStateToProps({courses}) {
+    return courses;
 }
 
-export default Progress;
+export default connect(mapStateToProps)(Progress);
