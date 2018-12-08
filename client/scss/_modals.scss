@@ -1,6 +1,6 @@
 @import "variables";
 
-#loginForm, #signUpForm, #restorePasswordForm {
+#loginForm, #signUpForm, #restorePasswordForm, #imageModalForm {
   overflow-y: auto;
   display: none;
   position: fixed;
@@ -38,5 +38,12 @@
     &:hover{
       cursor: pointer;
     }
+  }
+}
+
+#imageModalForm .modal {
+  max-width: 100%;
+  img {
+    max-width: 100%;
   }
 }
