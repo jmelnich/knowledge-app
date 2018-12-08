@@ -47,7 +47,7 @@ render() {
                 <li><a href={`${baseURL}/#about`}>about us</a></li>
                 <li><a href={`${baseURL}/#contacts`}>contacts</a></li>
                 <li>
-                    {auth ? <Link to='/profile'>{details.email}</Link> :
+                    {auth ? <Link to='/profile' className='user-nav'>{details.email}</Link> :
                     <a href="#loginForm" onClick={this.toggleForm}>log in</a>}
                 </li>
             </ul>
