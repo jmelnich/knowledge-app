@@ -1,7 +1,7 @@
 import {db} from '../../DB';
 
 module.exports = (request, result) => {
-    const data =(({user_id, course_id, category, status}) => ({user_id, course_id, category, status}))(request.body);
+    const data =(({user_id, course_id, category, status, title, level}) => ({user_id, course_id, category, status, title, level}))(request.body);
   const promise = db.getAllByUnique('courses', 'user_id', data.user_id);
 
   promise.then((resolve, reject) => {

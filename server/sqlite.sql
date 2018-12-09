@@ -15,5 +15,7 @@ CREATE TABLE courses
   user_id INTEGER,
   course_id VARCHAR(255),
   status INTEGER,
-  category VARCHAR (255)
+  category VARCHAR (255),
+  title VARCHAR (255),
+  level VARCHAR (255)
 );

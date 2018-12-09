@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import CourseItem from "../CatalogContent/CourseItem";
-import udacity from '../../udacity-courses.json';
+import CourseItemProfile from './CourseItemProfile';
 
 const Wish = (props) => {
     const wish = props.wish;
@@ -10,11 +9,11 @@ const Wish = (props) => {
         <div className="wrapper">
             <div className="section-content">
                 <h2>Want to learn</h2>
-                {/*<div className="flex-row courses-block">*/}
-                    {/*{props.wish.map(item => (*/}
-                        {/*<CourseItemProfile key={item.course_id} course={item}/>*/}
-                    {/*))}*/}
-                {/*</div>*/}
+                <div className="flex-row courses-block">
+                    {props.wish.map(item => (
+                        <CourseItemProfile key={item.course_id} item={item}/>
+                    ))}
+                </div>
             </div>
         </div>
     );

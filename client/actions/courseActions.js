@@ -7,6 +7,7 @@ const header = {
 };
 
 export const updateCourse = (course) => dispatch => {
+	console.log('course i goona send', course);
     fetch(`${baseURL}/course/update`, {
         method: 'POST',
         body: JSON.stringify(course),
@@ -15,6 +16,7 @@ export const updateCourse = (course) => dispatch => {
         .then((response) => response.json())
         .then((response) => {
             console.log('status for course on back', response);
+            console.log('course i add to store', course);
             dispatch({
                 type: UPDATE_COURSE,
                 payload: course

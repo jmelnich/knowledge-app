@@ -178,3 +178,15 @@
 .course__manage i.active {
   color: $accent;
 }
+
+.course-item-profile {
+  background-color: $accent;
+  color: white;
+  max-height: 150px;
+  section {
+    padding: 2em;
+  }
+  span {
+    color: white;
+  }
+}

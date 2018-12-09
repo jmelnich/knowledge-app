@@ -30,8 +30,10 @@ class CourseManage extends Component {
   /**
    * @param {string} id - Course id
    * @param {array} category - Course category
+   * @param {string} title - Course title
+   * @param {string} level - Course level
    */
-  toggleComplete(id, category) {
+  toggleComplete(id, category, title, level) {
   	const status = !this.state.isCompleted ? 2 : 0;
     this.setState({isCompleted: !this.state.isCompleted,
                     isWish: false});
@@ -39,7 +41,9 @@ class CourseManage extends Component {
     	user_id: this.props.user.details.id,
 		course_id: id,
 		category: category[0],
-		status
+		status,
+	    title,
+	    level
 	};
     this.props.updateCourse(course);
   }
@@ -47,8 +51,11 @@ class CourseManage extends Component {
   /**
    * @param {string} id - Course id
    * @param {array} category - Course category
+   * * @param {string} title - Course title
+   * @param {string} level - Course level
    */
-  toggleWish(id, category) {
+  toggleWish(id, category, title, level) {
+  	console.log(title, level);
       const status = !this.state.isWish ? 1 : 0;
       this.setState({isWish: !this.state.isWish,
                     isCompleted: false});
@@ -56,7 +63,9 @@ class CourseManage extends Component {
           user_id: this.props.user.details.id,
           course_id: id,
           category: category[0],
-          status
+          status,
+	      title,
+	      level
       };
       this.props.updateCourse(course);
   }
@@ -67,13 +76,15 @@ class CourseManage extends Component {
   //compare key course to array from ls
 
   render() {
+  	const title = this.props.course.title;
+  	const level = this.props.course.level;
     const course_id = this.props.course.key;
     const course_cat = this.props.course.tracks;
 	return (
 	  <div className="course__manage">
-		<i onClick={() => this.toggleComplete(course_id, course_cat)}
+		<i onClick={() => this.toggleComplete(course_id, course_cat, title, level)}
 		   className={`icon-ok-circled ${this.state.isCompleted ? 'active': ''}`}/>
-		<i onClick={() => this.toggleWish(course_id, course_cat)}
+		<i onClick={() => this.toggleWish(course_id, course_cat, title, level)}
 		   className={`icon-plus-circle ${this.state.isWish ? 'active': ''}`}/>
 	  </div>
 	);
