@@ -25,6 +25,14 @@ Once logged in, the user have ability to shelve courses according to their statu
 
 Based on the user's completed, his/her expterize in a certain field is calculated. 
 
+### My thought on future improvements
+* dropdown menu doesnt close when login opens - somehow control when clicked outside
+* burger on small screen
+* optimize so css files in each component (according with modular achitecture, isn't it?)
+* remove fieldsets! it is used for radio buttons, and logic grouping, such as adress (street, code, etc)
+* save data to local storage when user is not logged in
+* remove slider from mobile version
+
 
 ## Deployment
 
